@@ -96,9 +96,13 @@ def _kanpat_cmp(x, y):
     elif len(y) < len(x):
         return -1
     elif len(FROM_HIRA_PAT[x]) > len(FROM_HIRA_PAT[x]):
-         \
-        - (len(FROM_HIRA_PAT[x]) < len(FROM_HIRA_PAT[x]))
-FROM_HIRA_PAT = re.compile("|".join(sorted(FROM_HIRA_PAT.keys(), key=cmp_to_key(_kanpat_cmp))))
+        return 1
+    elif len(FROM_HIRA_PAT[x]) < len(FROM_HIRA_PAT[x]):
+        return -1
+    else:
+        return 0
+
+FROM_HIRA_PAT = re.compile("|".join(sorted(FROM_HIRA.keys(), key=cmp_to_key(_kanpat_cmp))))
 
 KUNREI = [y for (x, y) in pairs(re.split("\s+", KUNREITAB)) ]
 HEPBURN = [y for (x, y) in pairs(re.split("\s+", HEPBURNTAB) )]
