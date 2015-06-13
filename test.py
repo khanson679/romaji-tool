@@ -1,7 +1,14 @@
-import romkan_src as rk
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
-while True:
-    x = raw_input('1> ')
-    y = raw_input('2> ')
-    if x == '' or y == '': break
-    print rk._kanpat_cmp(x.decode("utf8"),y.decode("utf8"))
+import unittest
+
+from romajitools import *
+
+class RTTestCase(unittest.TestCase):
+    def test_convert_from_hira(self):
+        self.assertEqual(to_wapuro("ひらがな"), "hiragana")
+
+if __name__ == '__main__':
+    unittest.main()

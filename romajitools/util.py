@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
 
 """
 Convert a flat list representing pairs of words into a list of lists.

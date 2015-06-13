@@ -1,8 +1,8 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 import re
-
-from util import *
 
 """
 defs.py
@@ -24,27 +24,27 @@ Definitions for mapping between kana/romaji and an internal representation.
 # Section section adds dakuon
 # dya/dyu/dyo are omitted due to lack of standard use
 LEMMA_TAB_BASIC = """\
-a i u e o
-ka ki ku ke ko kya kyu kyo
-ga gi gu ge go gya gyu gyo
-sa si su se so sya syu syo
-za zi zu ze zo zya zyu zyo
-ta ti tu te to tya tyu tyo
-da di du de do
-na ni nu ne no nya nyu nyo
-ha hi hu he ho hya hyu hyo
-ba bi bu be bo bya byu byo
-pa pi pu pe po pya pyu pyo
-ma mi mu me mo mya myu myo
-ya    yu    yo
-ra ri ru re ro rya ryu ryo
-wa          wo
-n'
+A I U E O
+KA KI KU KE KO KYA KYU KYO
+GA GI GU GE GO GYA GYU GYO
+SA SI SU SE SO SYA SYU SYO
+ZA ZI ZU ZE ZO ZYA ZYU ZYO
+TA TI TU TE TO TYA TYU TYO
+DA DI DU DE DO
+NA NI NU NE NO NYA NYU NYO
+HA HI HU HE HO HYA HYU HYO
+BA BI BU BE BO BYA BYU BYO
+PA PI PU PE PO PYA PYU PYO
+MA MI MU ME MO MYA MYU MYO
+YA    YU    YO
+RA RI RU RE RO RYA RYU RYO
+WA          WO
+N'
 
-kka kki kku kke kko kkya kkyu kkyo
-ssa ssi ssu sse sso ssya ssyu ssyo
-tta tti ttu tte tto ttya ttyu ttyo
-ppa ppi ppu ppe ppo ppya ppyu ppyo
+KKA KKI KKU KKE KKO KKYA KKYU KKYO
+SSA SSI SSU SSE SSO SSYA SSYU SSYO
+TTA TTI TTU TTE TTO TTYA TTYU TTYO
+PPA PPI PPU PPE PPO PPYA PPYU PPYO
 """
 
 # lemmas for borrowed words, archaic spellings, etc.
@@ -54,31 +54,31 @@ ppa ppi ppu ppe ppo ppya ppyu ppyo
 #   -dakuon for added moras
 #   -chouon sign
 LEMMA_TAB_EXTENDED = """\
-    uxi       uxe uxo
-va  vi   vu   ve  vo   vya vyu vyo
-              sye
-              zye
-    texi toxu
-              tye
-tsa tsi       tse tso           
-    dexi doxu          dya dyu dyo
-fa  fi        fe  fo   fya fyu fyo
-              ye
-    wi        we
+    UXI       UXE UXO
+VA  VI   VU   VE  VO   VYA VYU VYO
+              SYE
+              ZYE
+    TEXI TOXU
+              TYE
+TSA TSI       TSE TSO           
+    DEXI DOXU          DYA DYU DYO
+FA  FI        FE  FO   FYA FYU FYO
+              YE
+    WI        WE
 
-gga ggi ggu gge ggo ggya ggyu ggyo
-zza zzi zzu zze zzo zzya zzyu zzyo
-dda ddi ddu dde ddo ddya ddyu ddyo
-hha hhi hhu hhe hho hhya hhyu hhyo
-bba bbi bbu bbe bbo bbya bbyu bbyo
+GGA GGI GGU GGE GGO GGYA GGYU GGYO
+ZZA ZZI ZZU ZZE ZZO ZZYA ZZYU ZZYO
+DDA DDI DDU DDE DDO DDYA DDYU DDYO
+HHA HHI HHU HHE HHO HHYA HHYU HHYO
+BBA BBI BBU BBE BBO BBYA BBYU BBYO
 
-                 ssye
-                 zzye
-     ttexi ttoxu
-                 ttye
-ttsa ttsi        ttse ttso           
-     ddexi ddoxu            
-ffa  ffi         ffe  ffo ffya ffyu ffyo
+                 SSYE
+                 ZZYE
+     TTEXI TTOXU
+                 TTYE
+TTSA TTSI        TTSE TTSO           
+     DDEXI DDOXU            
+FFA  FFI         FFE  FFO FFYA FFYU FFYO
 
 -
 """
@@ -99,34 +99,34 @@ WAPURO_SMALL_KANA_POST = "xa xi xu xe xo   xya xyu xyo   xwa"
 #----------------------------------------------------------------------------
 
 HIRAGANA_TAB = """\
-あ a   い i   う u   え e   お o             
-か ka  き ki  く ku  け ke  こ ko  きゃ kya  きゅ kyu  きょ kyo
-が ga  ぎ gi  ぐ gu  げ ge  ご go  ぎゃ gya  ぎゅ gyu  ぎょ gyo
-さ sa  し si  す su  せ se  そ so  しゃ sya  しゅ syu  しょ syo
-ざ za  じ zi  ず zu  ぜ ze  ぞ zo  じゃ zya  じゅ zyu  じょ zyo
-た ta  ち ti  つ tu  て te  と to  ちゃ tya  ちゅ tyu  ちょ tyo
-だ da  ぢ di  づ du  で de  ど do
-な na  に ni  ぬ nu  ね ne  の no  にゃ nya  にゅ nyu  にょ nyo
-は ha  ひ hi  ふ hu  へ he  ほ ho  ひゃ hya  ひゅ hyu  ひょ hyo
-ば ba  び bi  ぶ bu  べ be  ぼ bo  びゃ bya  びゅ byu  びょ byo
-ぱ pa  ぴ pi  ぷ pu  ぺ pe  ぽ po  ぴゃ pya  ぴゅ pyu  ぴょ pyo
-ま ma  み mi  む mu  め me  も mo  みゃ mya  みゅ myu  みょ myo
-や ya         ゆ yu        よ yo
-ら ra  り ri  る ru  れ re  ろ ro  りゃ rya  りゆ ryu  りょ ryo
-わ wa                      を wo
-ん n'
+あ A   い I   う U   え E   お O             
+か KA  き KI  く KU  け KE  こ KO  きゃ KYA  きゅ KYU  きょ KYO
+が GA  ぎ GI  ぐ GU  げ GE  ご GO  ぎゃ GYA  ぎゅ GYU  ぎょ GYO
+さ SA  し SI  す SU  せ SE  そ SO  しゃ SYA  しゅ SYU  しょ SYO
+ざ ZA  じ ZI  ず ZU  ぜ ZE  ぞ ZO  じゃ ZYA  じゅ ZYU  じょ ZYO
+た TA  ち TI  つ TU  て TE  と TO  ちゃ TYA  ちゅ TYU  ちょ TYO
+だ DA  ぢ DI  づ DU  で DE  ど DO
+な NA  に NI  ぬ NU  ね NE  の NO  にゃ NYA  にゅ NYU  にょ NYO
+は HA  ひ HI  ふ HU  へ HE  ほ HO  ひゃ HYA  ひゅ HYU  ひょ HYO
+ば BA  び BI  ぶ BU  べ BE  ぼ BO  びゃ BYA  びゅ BYU  びょ BYO
+ぱ PA  ぴ PI  ぷ PU  ぺ PE  ぽ PO  ぴゃ PYA  ぴゅ PYU  ぴょ PYO
+ま MA  み MI  む MU  め ME  も MO  みゃ MYA  みゅ MYU  みょ MYO
+や YA         ゆ YU        よ YO
+ら RA  り RI  る RU  れ RE  ろ RO  りゃ RYA  りゆ RYU  りょ RYO
+わ WA                      を WO
+ん N'
 
-         うぃ uxi             うぇ uxe  うぉ uxo
-ゔぁ va   ゔぃ vi    ゔ vu     ゔぇ ve   ゔぉ vo
-                             しぇ sye
-                             じぇ zye
-         てぃ texi  とぅ toxu
-                             ちぇ tye
-つぁ tsa  つぃ tsi   つぇ tse            つぉ tso     
-         でぃ dexi  どぅ doxu                    ぢゃ dya  ぢゅ dyu  ぢょ dyo
-ふぁ fa   ふぃ fi              ふぇ fe  ふぉ fo    ふゃ fya  ふゅ fyu  ふょ fyo
-                              いぇ ye
-         ゐ wi          ゑ we
+         うぃ UXI             うぇ UXE  うぉ UXO
+ゔぁ VA   ゔぃ VI    ゔ VU     ゔぇ VE   ゔぉ VO
+                             しぇ SYE
+                             じぇ ZYE
+         てぃ TEXI  とぅ TOXU
+                             ちぇ TYE
+つぁ TSA  つぃ TSI   つぇ TSE            つぉ TSO     
+         でぃ DEXI  どぅ DOXU                    ぢゃ DYA  ぢゅ DYU  ぢょ DYO
+ふぁ FA   ふぃ FI              ふぇ FE   ふぉ FO   ふゃ FYA  ふゅ FYU  ふょ FYO
+                              いぇ YE
+         ゐ WI          ゑ WE
 
 ー -
 """
