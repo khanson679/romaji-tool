@@ -83,6 +83,12 @@ FFA  FFI         FFE  FFO FFYA FFYU FFYO
 -
 """
 
+# lemmas for Kana that aren't really used, for completeness
+LEMMA_TAB_EXTRA = """\
+UXA    UXU
+    YI
+"""
+
 SOKUON_CONSONANTS = "KGSZTDHFBP"
 
 # use to handle non-standard use of small kana
