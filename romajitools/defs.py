@@ -24,7 +24,7 @@ Definitions for mapping between kana/romaji and an internal representation.
 # Section section adds dakuon
 # dya/dyu/dyo are omitted due to lack of standard use
 LEMMA_TAB_BASIC = """\
-A I U E O
+A  I  U  E  O
 KA KI KU KE KO KYA KYU KYO
 GA GI GU GE GO GYA GYU GYO
 SA SI SU SE SO SYA SYU SYO
@@ -60,7 +60,7 @@ VA  VI   VU   VE  VO   VYA VYU VYO
               ZYE
     TEXI TOXU
               TYE
-TSA TSI       TSE TSO           
+TSA TSI       TSE TSO
     DEXI DOXU          DYA DYU DYO
 FA  FI        FE  FO   FYA FYU FYO
               YE
