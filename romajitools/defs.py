@@ -99,34 +99,34 @@ WAPURO_SMALL_KANA_POST = "XA XI XU XE XO   XYA XYU XYO   XWA"
 #----------------------------------------------------------------------------
 
 HIRAGANA_TAB = """\
-あ A   い I   う U   え E   お O             
-か KA  き KI  く KU  け KE  こ KO  きゃ KYA  きゅ KYU  きょ KYO
-が GA  ぎ GI  ぐ GU  げ GE  ご GO  ぎゃ GYA  ぎゅ GYU  ぎょ GYO
-さ SA  し SI  す SU  せ SE  そ SO  しゃ SYA  しゅ SYU  しょ SYO
-ざ ZA  じ ZI  ず ZU  ぜ ZE  ぞ ZO  じゃ ZYA  じゅ ZYU  じょ ZYO
-た TA  ち TI  つ TU  て TE  と TO  ちゃ TYA  ちゅ TYU  ちょ TYO
-だ DA  ぢ DI  づ DU  で DE  ど DO
-な NA  に NI  ぬ NU  ね NE  の NO  にゃ NYA  にゅ NYU  にょ NYO
-は HA  ひ HI  ふ HU  へ HE  ほ HO  ひゃ HYA  ひゅ HYU  ひょ HYO
-ば BA  び BI  ぶ BU  べ BE  ぼ BO  びゃ BYA  びゅ BYU  びょ BYO
-ぱ PA  ぴ PI  ぷ PU  ぺ PE  ぽ PO  ぴゃ PYA  ぴゅ PYU  ぴょ PYO
-ま MA  み MI  む MU  め ME  も MO  みゃ MYA  みゅ MYU  みょ MYO
-や YA         ゆ YU        よ YO
-ら RA  り RI  る RU  れ RE  ろ RO  りゃ RYA  りゆ RYU  りょ RYO
-わ WA                      を WO
-ん N'
+あ A,  い I,  う U,  え E,  お O,
+か KA, き KI, く KU, け KE, こ KO, きゃ KYA, きゅ KYU, きょ KYO,
+が GA, ぎ GI, ぐ GU, げ GE, ご GO, ぎゃ GYA, ぎゅ GYU, ぎょ GYO,
+さ SA, し SI, す SU, せ SE, そ SO, しゃ SYA, しゅ SYU, しょ SYO,
+ざ ZA, じ ZI, ず ZU, ぜ ZE, ぞ ZO, じゃ ZYA, じゅ ZYU, じょ ZYO,
+た TA, ち TI, つ TU, て TE, と TO, ちゃ TYA, ちゅ TYU, ちょ TYO,
+だ DA, ぢ DI, づ DU, で DE, ど DO,
+な NA, に NI, ぬ NU, ね NE, の NO, にゃ NYA, にゅ NYU, にょ NYO,
+は HA, ひ HI, ふ HU, へ HE, ほ HO, ひゃ HYA, ひゅ HYU, ひょ HYO,
+ば BA, び BI, ぶ BU, べ BE, ぼ BO, びゃ BYA, びゅ BYU, びょ BYO,
+ぱ PA, ぴ PI, ぷ PU, ぺ PE, ぽ PO, ぴゃ PYA, ぴゅ PYU, ぴょ PYO,
+ま MA, み MI, む MU, め ME, も MO, みゃ MYA, みゅ MYU, みょ MYO,
+や YA,        ゆ YU,       よ YO,
+ら RA, り RI, る RU, れ RE, ろ RO, りゃ RYA, りゆ RYU, りょ RYO,
+わ WA,                     を WO,
+ん N',
 
-         うぃ UXI             うぇ UXE  うぉ UXO
-ゔぁ VA   ゔぃ VI    ゔ VU     ゔぇ VE   ゔぉ VO
-                             しぇ SYE
-                             じぇ ZYE
-         てぃ TEXI  とぅ TOXU
-                             ちぇ TYE
-つぁ TSA  つぃ TSI   つぇ TSE            つぉ TSO     
-         でぃ DEXI  どぅ DOXU                    ぢゃ DYA  ぢゅ DYU  ぢょ DYO
-ふぁ FA   ふぃ FI              ふぇ FE   ふぉ FO   ふゃ FYA  ふゅ FYU  ふょ FYO
-                              いぇ YE
-         ゐ WI          ゑ WE
+         うぃ UXI,            うぇ UXE, うぉ UXO,
+ゔぁ VA,  ゔぃ VI,   ゔ VU,    ゔぇ VE,  ゔぉ VO,
+                             しぇ SYE,
+                             じぇ ZYE,
+         てぃ TEXI, とぅ TOXU,
+                             ちぇ TYE,
+つぁ TSA, つぃ TSI,  つぇ TSE,           つぉ TSO,     
+         でぃ DEXI, どぅ DOXU,                   ぢゃ DYA, ぢゅ DYU, ぢょ DYO,
+ふぁ FA,  ふぃ FI,             ふぇ FE,  ふぉ FO,  ふゃ FYA, ふゅ FYU, ふょ FYO,
+                              いぇ YE,
+         ゐ WI,         ゑ WE,
 
 ー -
 """
@@ -221,4 +221,4 @@ HIRAGANA_SMALL_POST = "ぁ ぃ ぅ ぇ ぉ ゃ ゅ ょ ゎ"
 #
 
 # if __name__ == "__main__":
-#     print list(groups(re.split('\s', "a 1 b 2 cc 33\nddd 444\teee 555")))
+#     print list(groups(re.split('\s', "a 1 b 2 cc 33,\nddd 444\teee 555")))
