@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 import re
+from pprint import pprint, pformat
 
 from defs import *
 from util import *
@@ -11,6 +12,7 @@ from util import *
 
 FORMATS = ("hira", "hira-half", "kata", "kata-half",
     "wapuro", "kunrei", "hepburn", "hepburn-trad")
+
 
 #
 # public functions
@@ -50,13 +52,45 @@ def to_wapuro(in_str):
     intermediate = FROM_HIRA_PAT.sub(lambda x: FROM_HIRA[x.group(0)], in_str)
     return intermediate.lower()
 
+def dump_tables():
+    print("--------------------"
+          "Lemma Table - Full"
+          "--------------------")
+    print(LEMMAS)
+    print("Total:", len(LEMMAS))
+
+    print("--------------------"
+          "Lemma Table - Basic"
+          "--------------------")
+    print(LEMMAS_BASIC)
+    print("Total:", len(LEMMAS_BASIC))
+
+    print("--------------------"
+          "Lemma Table - Extended"
+          "--------------------")
+    print(LEMMAS_EXTENDED)
+    print("Total:", len(LEMMAS_EXTENDED))
+
+    print("--------------------"
+          "Lemma Table - Extra"
+          "--------------------")
+    print(LEMMAS_EXTRA)
+    print("Total:", len(LEMMAS_EXTRA))
+
+    print("--------------------"
+          "Hiragana Table"
+          "--------------------")
+    print(pformat(FROM_HIRA).encode('utf8'))
+    print("Total:", len(FROM_HIRA))
 
 #
 # init format converstion data
 #
 
-LEMMAS_BASIC = LEMMA_TAB_BASIC.split()
+LEMMAS          = LEMMA_TAB_FULL.split()
+LEMMAS_BASIC    = LEMMA_TAB_BASIC.split()
 LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
+LEMMAS_EXTRA    = LEMMA_TAB_EXTRA.split()
 
 # build mappings
 
@@ -66,7 +100,8 @@ IN_MAPPINGS = {"hira":FROM_HIRA}
 TO_HIRA = {}
 OUT_MAPPINGS = {"hira":TO_HIRA}
 
-for hira, lemma in pairs(HIRAGANA_TAB.split()):
+for entry in re.split(",\s*", HIRAGANA_TAB):
+    hira, lemma = entry.split()
     FROM_HIRA[hira] = lemma
     TO_HIRA[lemma] = hira
 
