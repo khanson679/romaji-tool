@@ -83,11 +83,11 @@ FFA  FFI         FFE  FFO FFYA FFYU FFYO
 -
 """
 
-SOKUON_CONSONANTS = "kgsztdhfbp"
+SOKUON_CONSONANTS = "KGSZTDHFBP"
 
 # use to handle non-standard use of small kana
-WAPURO_SMALL_KANA_PRE =  "xtu"
-WAPURO_SMALL_KANA_POST = "xa xi xu xe xo   xya xyu xyo   xwa"
+WAPURO_SMALL_KANA_PRE =  "XTU"
+WAPURO_SMALL_KANA_POST = "XA XI XU XE XO   XYA XYU XYO   XWA"
 
 
 #----------------------------------------------------------------------------
