@@ -115,7 +115,7 @@ for entry in re.split(",\s*", HIRAGANA_TAB):
 
 # validate table
 for lemma in TO_HIRA:
-    if lemma not in LEMMAS_BASIC and lemma not in LEMMAS_EXTENDED:
+    if lemma not in LEMMAS:
         raise Exception("Lemma for entry {},{} in hiragana table"
                         " not in lemma list.".format(hira, lemma))
 
