@@ -108,20 +108,20 @@ PPA PPI PPU PPE PPO PPYA PPYU PPYO
 #   -chouon sign
 LEMMA_TAB_EXTENDED = """\
     UXI       UXE UXO
-VA  VI   VU   VE  VO   VYA VYU VYO
+VA  VI   VU   VE  VO
               SYE
               ZYE
     TEXI TOXU
               TYE
 TSA TSI       TSE TSO
-    DEXI DOXU          DYA DYU DYO
-FA  FI        FE  FO   FYA FYU FYO
+    DEXI DOXU
+FA  FI        FE  FO
               YE
     WI        WE
 
 GGA GGI GGU GGE GGO GGYA GGYU GGYO
 ZZA ZZI ZZU ZZE ZZO ZZYA ZZYU ZZYO
-DDA DDI DDU DDE DDO DDYA DDYU DDYO
+DDA DDI DDU DDE DDO
 HHA HHI HHU HHE HHO HHYA HHYU HHYO
 BBA BBI BBU BBE BBO BBYA BBYU BBYO
 
@@ -131,14 +131,17 @@ BBA BBI BBU BBE BBO BBYA BBYU BBYO
                  TTYE
 TTSA TTSI        TTSE TTSO
      DDEXI DDOXU
-FFA  FFI         FFE  FFO FFYA FFYU FFYO
+FFA  FFI         FFE  FFO
 
 -
 """
 
-# lemmas for Kana that aren't really used, for completeness
+# lemmas for Kana that are rarely used, for completeness
 LEMMA_TAB_EXTRA = """\
 UXA    UXU
+               VYA VYU VYO
+               DYA DYU DYO DDYA DDYU DDYO
+               FYA FYU FYO FFYA FFYU FFYO
     YI
 """
 
