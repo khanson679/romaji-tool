@@ -113,13 +113,6 @@ for entry in re.split(",\s*", HIRAGANA_TAB):
         FROM_HIRA[sokuon_hira] = sokuon_lemma
         TO_HIRA[sokuon_lemma] = sokuon_hira
 
-# validate table
-for lemma in TO_HIRA:
-    if lemma not in LEMMAS:
-        raise Exception("Lemma for entry {},{} in hiragana table"
-                        " not in lemma list.".format(hira, lemma))
-
-
 # build regex patterns, sorting so that longer sequences get matched first
 # this ensures that multi-kana lemmas are matched correctly
 
