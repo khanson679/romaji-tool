@@ -175,12 +175,12 @@ HIRAGANA_TAB = """\
 ぱ PA, ぴ PI, ぷ PU, ぺ PE, ぽ PO, ぴゃ PYA, ぴゅ PYU, ぴょ PYO,
 ま MA, み MI, む MU, め ME, も MO, みゃ MYA, みゅ MYU, みょ MYO,
 や YA,        ゆ YU,       よ YO,
-ら RA, り RI, る RU, れ RE, ろ RO, りゃ RYA, りゆ RYU, りょ RYO,
+ら RA, り RI, る RU, れ RE, ろ RO, りゃ RYA, りゅ RYU, りょ RYO,
 わ WA,                     を WO,
 ん N',
 
-         うぃ UXI,            うぇ UXE, うぉ UXO,
-ゔぁ VA,  ゔぃ VI,   ゔ VU,    ゔぇ VE,  ゔぉ VO,
+うぁ UXA, うぃ UXI,  うぅ UXU,   うぇ UXE, うぉ UXO,
+ゔぁ VA,  ゔぃ VI,   ゔ VU,    ゔぇ VE,  ゔぉ VO,   ゔゃ VYA, ゔゅ VYU, ゔょ VYO,
                              しぇ SYE,
                              じぇ ZYE,
          てぃ TEXI, とぅ TOXU,
@@ -188,7 +188,7 @@ HIRAGANA_TAB = """\
 つぁ TSA, つぃ TSI,  つぇ TSE,           つぉ TSO,     
          でぃ DEXI, どぅ DOXU,                   ぢゃ DYA, ぢゅ DYU, ぢょ DYO,
 ふぁ FA,  ふぃ FI,             ふぇ FE,  ふぉ FO,  ふゃ FYA, ふゅ FYU, ふょ FYO,
-                              いぇ YE,
+         いぃ  YI,            いぇ YE,
          ゐ WI,         ゑ WE,
 
 ー -
