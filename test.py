@@ -13,11 +13,11 @@ class RTTestCase(unittest.TestCase):
     
     def test_hiragana_table(self):
         # check that all Hiragana entries have a lemma, and vis versa
-        for lemma in FROM_HIRA.values():
+        for lemma in TO_HIRA:
             self.assertIn(lemma, LEMMAS,
                     "Lemma from Hiragana table not in master table: {}".format(lemma))
         for lemma in LEMMAS:
-            self.assertIn(lemma, FROM_HIRA.values(),
+            self.assertIn(lemma, TO_HIRA,
                     "Hiragana table missing a lemma: {}".format(lemma))
         
     def test_convert_from_hira(self):
