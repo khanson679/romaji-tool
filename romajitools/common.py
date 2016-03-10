@@ -123,10 +123,10 @@ for lemma in TO_HIRA:
 # build regex patterns, sorting so that longer sequences get matched first
 # this ensures that multi-kana lemmas are matched correctly
 
-TO_HIRA_PAT = re.compile("|".join(
-                         sorted(TO_HIRA.keys(), key=len, reverse=True)))
-FROM_HIRA_PAT = re.compile("|".join(
-                           sorted(FROM_HIRA.keys(), key=len, reverse=True)))
+TO_HIRA_PAT = re.compile(
+        "|".join(sorted(TO_HIRA.keys(), key=len, reverse=True)))
+FROM_HIRA_PAT = re.compile(
+        "|".join(sorted(FROM_HIRA.keys(), key=len, reverse=True)))
 
 IN_PATTERNS = {'hira':TO_HIRA_PAT}
 OUT_PATTERNS = {'hira':FROM_HIRA_PAT}
