@@ -15,62 +15,9 @@ Definitions for mapping between kana/romaji and an internal representation.
 #
 # These are unambiguous representations of one or more kana,
 #   essentially wapuro-style Kunrei-shiki.
-# The first defines all supported lemmas, while the remainder are used
-#   for classification.
-#
-# These tables can be easily parsed into lists of strings.
+# Implementated as space-separated lists, which can be easily parsed
+#   into lists of strings.
 #----------------------------------------------------------------------------
-
-# full lemma table
-LEMMA_TAB_FULL = """\
-A  I  U  E  O
-KA KI KU KE KO KYA KYU KYO
-GA GI GU GE GO GYA GYU GYO
-SA SI SU SE SO SYA SYU SYO
-ZA ZI ZU ZE ZO ZYA ZYU ZYO
-TA TI TU TE TO TYA TYU TYO
-DA DI DU DE DO
-NA NI NU NE NO NYA NYU NYO
-HA HI HU HE HO HYA HYU HYO
-BA BI BU BE BO BYA BYU BYO
-PA PI PU PE PO PYA PYU PYO
-MA MI MU ME MO MYA MYU MYO
-YA    YU    YO
-RA RI RU RE RO RYA RYU RYO
-WA WI    WE WO
-N'
-
-UXA UXI  UXU  UXE UXO
-VA  VI   VU   VE  VO   VYA VYU VYO
-              SYE
-              ZYE
-    TEXI TOXU
-              TYE
-TSA TSI       TSE TSO
-    DEXI DOXU          DYA DYU DYO
-FA  FI        FE  FO   FYA FYU FYO
-    YI        YE
-
-KKA KKI KKU KKE KKO KKYA KKYU KKYO
-GGA GGI GGU GGE GGO GGYA GGYU GGYO
-SSA SSI SSU SSE SSO SSYA SSYU SSYO
-ZZA ZZI ZZU ZZE ZZO ZZYA ZZYU ZZYO
-TTA TTI TTU TTE TTO TTYA TTYU TTYO
-DDA DDI DDU DDE DDO DDYA DDYU DDYO
-HHA HHI HHU HHE HHO HHYA HHYU HHYO
-BBA BBI BBU BBE BBO BBYA BBYU BBYO
-PPA PPI PPU PPE PPO PPYA PPYU PPYO
-
-                 SSYE
-                 ZZYE
-     TTEXI TTOXU
-                 TTYE
-TTSA TTSI        TTSE TTSO
-     DDEXI DDOXU
-FFA  FFI         FFE  FFO FFYA FFYU FFYO
-
--
-"""
 
 # lemmas used in native Japanese words
 # First section includes base moras, dakuon, handakuon,and youon

@@ -87,10 +87,10 @@ def dump_tables():
 # init format converstion data
 #
 
-LEMMAS          = LEMMA_TAB_FULL.split()
 LEMMAS_BASIC    = LEMMA_TAB_BASIC.split()
 LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
 LEMMAS_EXTRA    = LEMMA_TAB_EXTRA.split()
+LEMMAS          = LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA
 
 # build mappings
 

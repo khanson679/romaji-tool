@@ -10,12 +10,6 @@ class RTTestCase(unittest.TestCase):
     def test_lemma_tables(self):
         # sanity test
         self.assertEqual(len(LEMMAS), 233)
-        
-        # have all lemmas in the full table been categorized?
-        for lemma in LEMMAS:
-            self.assertIn(
-                    lemma, LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA,
-                    "Lemma missing from category tables: {}.".format(lemma))
     
     def test_hiragana_table(self):
         # check that all Hiragana entries have a lemma, and vis versa
