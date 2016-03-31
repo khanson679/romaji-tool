@@ -4,8 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 import re
-import itertools
-from pprint import pprint, pformat
+from pprint import pformat
 
 from defs import *
 from util import *
@@ -84,19 +83,22 @@ def dump_tables():
     print(pformat(FROM_HIRA).encode('utf8'))
     print("Total:", len(FROM_HIRA))
 
+
 #
-# init format converstion data
+# init lemma data
 #
 
 LEMMAS_BASIC    = LEMMA_TAB_BASIC.split()
 LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
 LEMMAS_EXTRA    = LEMMA_TAB_EXTRA.split()
-LEMMA_SOKUON = LEMMA_SOKUON
 LEMMAS_SMALL_KANA_POST = LEMMA_TAB_SMALL_KANA_POST.split()
-LEMMAS = list(itertools.chain(LEMMAS_BASIC, LEMMAS_EXTENDED, LEMMAS_EXTRA,
-        [LEMMA_SOKUON], LEMMAS_SMALL_KANA_POST))
+LEMMAS = (LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA +
+        LEMMAS_SMALL_KANA_POST + [LEMMA_SOKUON])
 
+
+#
 # build mappings
+#
 
 FROM_HIRA = {}
 for entry in re.split(",\s*", HIRAGANA_TAB):
@@ -114,10 +116,12 @@ IN_MAPPINGS = {"hira":FROM_HIRA}
 
 TO_HIRA = {lemma : hira for hira, lemma in FROM_HIRA.iteritems()}
 OUT_MAPPINGS = {"hira":TO_HIRA}
-dump_tables()
 
+
+#
 # build regex patterns, sorting so that longer sequences get matched first
 # this ensures that multi-kana lemmas are matched correctly
+#
 
 TO_HIRA_PAT = re.compile(
         "|".join(sorted(TO_HIRA.keys(), key=len, reverse=True)))
