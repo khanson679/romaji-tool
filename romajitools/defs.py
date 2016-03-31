@@ -92,15 +92,16 @@ UXA    UXU
     YI
 """
 
+# use to handle non-standard use of small kana
+LEMMA_TAB_SMALL_KANA_POST = "XA XI XU XE XO   XYA XYU XYO   XWA"
+LEMMA_SOKUON = "XTU"
+
 
 #----------------------------------------------------------------------------
 # Support data
 #----------------------------------------------------------------------------
-SOKUON_CONSONANTS = "KGSZTDHFBP"
 
-# use to handle non-standard use of small kana
-WAPURO_SMALL_KANA_PRE =  "XTU"
-WAPURO_SMALL_KANA_POST = "XA XI XU XE XO   XYA XYU XYO   XWA"
+SOKUON_CONSONANTS = "KGSZTDHFBP"
 
 
 #----------------------------------------------------------------------------
@@ -141,11 +142,13 @@ HIRAGANA_TAB = """\
          いぃ  YI,            いぇ YE,
          ゐ WI,         ゑ WE,
 
-ー -
-"""
+ー -,
+
+っ XTU,
+
+ぁ XA, ぃ XI, ぅ XU, ぇ XE, ぉ XO, ゃ XYA, ゅ XYU, ょ XYO, ゎ XWA"""
 
 HIRAGANA_SOKUON = "っ"
-HIRAGANA_SMALL_POST = "ぁ ぃ ぅ ぇ ぉ ゃ ゅ ょ ゎ"
 
 
 # KATAKANA_TAB = """ァ  xa ア  a  ィ  xi イ  i  ゥ  xu

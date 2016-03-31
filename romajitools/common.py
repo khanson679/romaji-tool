@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 import re
+import itertools
 from pprint import pprint, pformat
 
 from defs import *
@@ -90,28 +91,30 @@ def dump_tables():
 LEMMAS_BASIC    = LEMMA_TAB_BASIC.split()
 LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
 LEMMAS_EXTRA    = LEMMA_TAB_EXTRA.split()
-LEMMAS          = LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA
+LEMMA_SOKUON = LEMMA_SOKUON
+LEMMAS_SMALL_KANA_POST = LEMMA_TAB_SMALL_KANA_POST.split()
+LEMMAS = list(itertools.chain(LEMMAS_BASIC, LEMMAS_EXTENDED, LEMMAS_EXTRA,
+        [LEMMA_SOKUON], LEMMAS_SMALL_KANA_POST))
 
 # build mappings
 
 FROM_HIRA = {}
-IN_MAPPINGS = {"hira":FROM_HIRA}
-
-TO_HIRA = {}
-OUT_MAPPINGS = {"hira":TO_HIRA}
-
 for entry in re.split(",\s*", HIRAGANA_TAB):
     hira, lemma = entry.split()
     FROM_HIRA[hira] = lemma
-    TO_HIRA[lemma] = hira
-
     # add sokuon, if applicable
     # ex. ka -> kka   but not wa -> wwa
-    if lemma[0] in SOKUON_CONSONANTS:
-        sokuon_lemma = lemma[0] + lemma
+    consonant = lemma[0]
+    if consonant in SOKUON_CONSONANTS:
+        sokuon_lemma = consonant + lemma
         sokuon_hira = HIRAGANA_SOKUON + hira
         FROM_HIRA[sokuon_hira] = sokuon_lemma
-        TO_HIRA[sokuon_lemma] = sokuon_hira
+
+IN_MAPPINGS = {"hira":FROM_HIRA}
+
+TO_HIRA = {lemma : hira for hira, lemma in FROM_HIRA.iteritems()}
+OUT_MAPPINGS = {"hira":TO_HIRA}
+dump_tables()
 
 # build regex patterns, sorting so that longer sequences get matched first
 # this ensures that multi-kana lemmas are matched correctly

@@ -9,7 +9,7 @@ from romajitools import *
 class RTTestCase(unittest.TestCase):
     def test_lemma_tables(self):
         # sanity test
-        self.assertEqual(len(LEMMAS), 233)
+        self.assertEqual(len(LEMMAS), 243)
     
     def test_hiragana_table(self):
         # check that all Hiragana entries have a lemma, and vis versa
