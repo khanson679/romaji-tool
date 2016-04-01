@@ -104,8 +104,10 @@ FROM_HIRA = {}
 for entry in re.split(",\s*", HIRAGANA_TAB):
     hira, lemma = entry.split()
     FROM_HIRA[hira] = lemma
-    # add sokuon, if applicable
-    # ex. ka -> kka   but not wa -> wwa
+
+# add sokuon, if applicable
+# ex. ka->kka but not wa->wwa
+for hira, lemma in FROM_HIRA.items():
     consonant = lemma[0]
     if consonant in SOKUON_CONSONANTS:
         sokuon_lemma = consonant + lemma
