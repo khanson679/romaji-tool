@@ -3,12 +3,9 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
-import re
-from pprint import pformat
-
 from defs import *
 from util import *
-
+from textformat import TextFormat
 
 FORMATS = ("hira", "hira-half", "kata", "kata-half",
     "wapuro", "kunrei", "hepburn", "hepburn-trad")
@@ -19,69 +16,76 @@ FORMATS = ("hira", "hira-half", "kata", "kata-half",
 #
 
 def convert(in_str, in_fmt, out_fmt, in_opts=None, out_opts=None):
-    # temporarily hardcode format args
-    in_fmt = "hira"
-    out_fmt = "wapuro"
+    """
+    Convert `in_str` from the specified input format to the specified output format
+    via an internal representation.
+    """
 
     if in_opts == None:
         in_opts = []
     if out_opts == None:
         out_opts = []
 
-    # map to internal representation, replacing matched lemmas as they occur
+    # load formats
     try:
-        in_mapping = IN_MAPPINGS[in_fmt]
+        in_format = FORMATS[in_fmt]
     except KeyError:
         raise ValueError("in_fmt must be one of: {}."
                          " Got '{}' instead.".format(FORMATS, in_fmt))
-    pattern = IN_PATTERNS[in_fmt]
-    intermediate = FROM_HIRA_PAT.sub(lambda x: in_mapping[x.group(0)], in_str)
-
-    # map to output format
     try:
-        out_mapping = OUT_MAPPINGS[out_fmt]
+        out_format = FORMATS[out_fmt]
     except KeyError:
         raise ValueError("out_fmt must be one of: {}."
                          " Got '{}' instead.".format(FORMATS, out_fmt))
 
-def to_wapuro(in_str):
-    """
-    Convert any format to wapuro romaji.
-    """
-    
-    intermediate = FROM_HIRA_PAT.sub(lambda x: FROM_HIRA[x.group(0)], in_str)
-    return intermediate.lower()
+    # map to output format
+    intermediate = in_format.parse(in_str)
+    out_str = out_format.emit(intermediate).lower()
+
+    return out_str
+
+
+# def to_wapuro(in_str):
+#     """
+#     Convert any format to wapuro romaji.
+#     """
+#     return convert(in_str, "hiragana", "wapuro")
+
+
+#
+# Debug functions
+#
 
 def dump_tables():
-    print("--------------------"
-          "Lemma Table - Full"
-          "--------------------")
-    print(LEMMAS)
-    print("Total:", len(LEMMAS))
+    print("--------------------",
+          "Lemma Table - Full",
+          "--------------------",
+          ",  ".join(LEMMAS),
+          "Total: {}".format(len(LEMMAS)),
+          sep='\n')
 
-    print("--------------------"
-          "Lemma Table - Basic"
-          "--------------------")
-    print(LEMMAS_BASIC)
-    print("Total:", len(LEMMAS_BASIC))
+    # print("--------------------"
+    #       "Lemma Table - Basic"
+    #       "--------------------")
+    # print(LEMMAS_BASIC)
+    # print("Total:", len(LEMMAS_BASIC))
 
-    print("--------------------"
-          "Lemma Table - Extended"
-          "--------------------")
-    print(LEMMAS_EXTENDED)
-    print("Total:", len(LEMMAS_EXTENDED))
+    # print("--------------------"
+    #       "Lemma Table - Extended"
+    #       "--------------------")
+    # print(LEMMAS_EXTENDED)
+    # print("Total:", len(LEMMAS_EXTENDED))
 
-    print("--------------------"
-          "Lemma Table - Extra"
-          "--------------------")
-    print(LEMMAS_EXTRA)
-    print("Total:", len(LEMMAS_EXTRA))
+    # print("--------------------"
+    #       "Lemma Table - Extra"
+    #       "--------------------")
+    # print(LEMMAS_EXTRA)
+    # print("Total:", len(LEMMAS_EXTRA))
 
     print("--------------------"
           "Hiragana Table"
           "--------------------")
-    print(pformat(FROM_HIRA).encode('utf8'))
-    print("Total:", len(FROM_HIRA))
+    print(unicode(FORMATS["hiragana"]).encode('utf-8'))
 
 
 #
@@ -93,42 +97,12 @@ LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
 LEMMAS_EXTRA    = LEMMA_TAB_EXTRA.split()
 LEMMAS_SMALL_KANA_POST = LEMMA_TAB_SMALL_KANA_POST.split()
 LEMMAS = (LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA +
-        LEMMAS_SMALL_KANA_POST + [LEMMA_SOKUON])
+        LEMMAS_SMALL_KANA_POST + [LEMMA_SOKUON, LEMMA_CHOUON])
 
 
 #
-# build mappings
+# build formats
 #
 
-FROM_HIRA = {}
-for entry in re.split(",\s*", HIRAGANA_TAB):
-    hira, lemma = entry.split()
-    FROM_HIRA[hira] = lemma
-
-# add sokuon, if applicable
-# ex. ka->kka but not wa->wwa
-for hira, lemma in FROM_HIRA.items():
-    consonant = lemma[0]
-    if consonant in SOKUON_CONSONANTS:
-        sokuon_lemma = consonant + lemma
-        sokuon_hira = HIRAGANA_SOKUON + hira
-        FROM_HIRA[sokuon_hira] = sokuon_lemma
-
-IN_MAPPINGS = {"hira":FROM_HIRA}
-
-TO_HIRA = {lemma : hira for hira, lemma in FROM_HIRA.iteritems()}
-OUT_MAPPINGS = {"hira":TO_HIRA}
-
-
-#
-# build regex patterns, sorting so that longer sequences get matched first
-# this ensures that multi-kana lemmas are matched correctly
-#
-
-TO_HIRA_PAT = re.compile(
-        "|".join(sorted(TO_HIRA.keys(), key=len, reverse=True)))
-FROM_HIRA_PAT = re.compile(
-        "|".join(sorted(FROM_HIRA.keys(), key=len, reverse=True)))
-
-IN_PATTERNS = {'hira':TO_HIRA_PAT}
-OUT_PATTERNS = {'hira':FROM_HIRA_PAT}
+FORMATS = {"hiragana" : TextFormat.from_string("Hiragana", HIRAGANA_TAB),
+           "wapuro"   : TextFormat.from_string("Wapuro", WAPURO_TAB)}

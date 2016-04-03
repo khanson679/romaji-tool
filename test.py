@@ -7,22 +7,32 @@ import unittest
 from romajitools import *
 
 class RTTestCase(unittest.TestCase):
+
     def test_lemma_tables(self):
         # sanity test
-        self.assertEqual(len(LEMMAS), 243)
+        self.assertEqual(len(LEMMAS), 153)
     
-    def test_hiragana_table(self):
-        # check that all Hiragana entries have a lemma, and vis versa
-        for lemma in TO_HIRA:
-            self.assertIn(lemma, LEMMAS,
-                    "Lemma from Hiragana table not in master table: {}".format(lemma))
+
+    def test_hiragana_lemmas(self):
+        # check that all Hiragana table lemmas in master list, and vis versa
+        for lemma in FORMATS["hiragana"].produced_lemmas():
+            self.assertIn(
+                lemma,
+                LEMMAS,
+                "Lemma from Hiragana table not in lemma list: {}".format(lemma))
         for lemma in LEMMAS:
-            self.assertIn(lemma, TO_HIRA,
-                    "Hiragana table missing a lemma: {}".format(lemma))
+            self.assertIn(
+                lemma,
+                FORMATS["hiragana"].accepted_lemmas(),
+                "Hiragana table missing a lemma: {}".format(lemma))
+
         
-    def test_convert_from_hira(self):
+    def test_hira_to_wapuro(self):
         # sanity test
-        self.assertEqual(to_wapuro("ひらがな"), "hiragana")
+        self.assertEqual(
+            convert("ひらがな", in_fmt="hiragana", out_fmt="wapuro"),
+            "hiragana")
+
 
 if __name__ == '__main__':
     unittest.main()

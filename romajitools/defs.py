@@ -20,8 +20,7 @@ Definitions for mapping between kana/romaji and an internal representation.
 #----------------------------------------------------------------------------
 
 # lemmas used in native Japanese words
-# First section includes base moras, dakuon, handakuon,and youon
-# Section section adds dakuon
+# Includes base moras, handakuon,and youon
 # dya/dyu/dyo are omitted due to lack of standard use
 LEMMA_TAB_BASIC = """\
 A  I  U  E  O
@@ -40,19 +39,9 @@ YA    YU    YO
 RA RI RU RE RO RYA RYU RYO
 WA          WO
 N'
-
-KKA KKI KKU KKE KKO KKYA KKYU KKYO
-SSA SSI SSU SSE SSO SSYA SSYU SSYO
-TTA TTI TTU TTE TTO TTYA TTYU TTYO
-PPA PPI PPU PPE PPO PPYA PPYU PPYO
 """
 
 # lemmas for borrowed words, archaic spellings, etc.
-# sections are:
-#   -added moras
-#   -dakuon for voiced moras
-#   -dakuon for added moras
-#   -chouon sign
 LEMMA_TAB_EXTENDED = """\
     UXI       UXE UXO
 VA  VI   VU   VE  VO
@@ -65,36 +54,23 @@ TSA TSI       TSE TSO
 FA  FI        FE  FO
               YE
     WI        WE
-
-GGA GGI GGU GGE GGO GGYA GGYU GGYO
-ZZA ZZI ZZU ZZE ZZO ZZYA ZZYU ZZYO
-DDA DDI DDU DDE DDO
-HHA HHI HHU HHE HHO HHYA HHYU HHYO
-BBA BBI BBU BBE BBO BBYA BBYU BBYO
-
-                 SSYE
-                 ZZYE
-     TTEXI TTOXU
-                 TTYE
-TTSA TTSI        TTSE TTSO
-     DDEXI DDOXU
-FFA  FFI         FFE  FFO
-
--
 """
 
 # lemmas for Kana that are rarely used, for completeness
 LEMMA_TAB_EXTRA = """\
 UXA    UXU
                VYA VYU VYO
-               DYA DYU DYO DDYA DDYU DDYO
-               FYA FYU FYO FFYA FFYU FFYO
+               DYA DYU DYO
+               FYA FYU FYO
     YI
 """
 
 # use to handle non-standard use of small kana
 LEMMA_TAB_SMALL_KANA_POST = "XA XI XU XE XO   XYA XYU XYO   XWA"
-LEMMA_SOKUON = "XTU"
+
+# special lemmas
+LEMMA_SOKUON = "Q"
+LEMMA_CHOUON = "-"
 
 
 #----------------------------------------------------------------------------
@@ -105,7 +81,25 @@ SOKUON_CONSONANTS = "KGSZTDHFBP"
 
 
 #----------------------------------------------------------------------------
-# Kana tables
+# Romaji conversion tables
+#----------------------------------------------------------------------------
+
+WAPURO_TAB = """\
+kk QK,
+gg QG,
+ss QS,
+zz QZ,
+tt QT,
+dd QD,
+hh QH,
+ff QF,
+bb QB,
+pp QP
+"""
+
+
+#----------------------------------------------------------------------------
+# Kana conversion tables
 #
 # Used to map kana <-> lemmas
 # Derived from python-romkan, itself based on KAKASI
@@ -142,13 +136,11 @@ HIRAGANA_TAB = """\
          いぃ  YI,            いぇ YE,
          ゐ WI,         ゑ WE,
 
-ー -,
+ぁ XA, ぃ XI, ぅ XU, ぇ XE, ぉ XO, ゃ XYA, ゅ XYU, ょ XYO, ゎ XWA,
 
-っ XTU,
-
-ぁ XA, ぃ XI, ぅ XU, ぇ XE, ぉ XO, ゃ XYA, ゅ XYU, ょ XYO, ゎ XWA"""
-
-HIRAGANA_SOKUON = "っ"
+っ Q,
+ー -
+"""
 
 
 # KATAKANA_TAB = """ァ  xa ア  a  ィ  xi イ  i  ゥ  xu
