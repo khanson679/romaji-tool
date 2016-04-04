@@ -8,6 +8,8 @@ Python library to convert between different forms of Japanese Kana and romanizat
 u"han'ou"
 ```
 
+Originally based on [python-romkan][rk] but has already diverged substantially.
+
 
 ## Features
 
