@@ -11,7 +11,9 @@ from romajitools import *
 class RTTestCase(unittest.TestCase):
 
     def test_lemma_list(self):
-        """Check that the number of lemmas in master list is correct."""
+        """
+        Check that the number of lemmas in master list is correct.
+        """
         self.assertEqual(len(defs.LEMMAS), 153)
     
     def test_format_lemma_coverage(self):
