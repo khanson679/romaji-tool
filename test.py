@@ -16,7 +16,7 @@ class RTTestCase(unittest.TestCase):
     
     def test_hiragana_lemmas(self):
         # check that all Hiragana table lemmas in master list, and vis versa
-        for lemma in FORMATS["hiragana"].produced_lemmas():
+        for lemma in textformat.HIRAGANA.produced_lemmas():
             self.assertIn(
                 lemma,
                 defs.LEMMAS,
@@ -24,7 +24,7 @@ class RTTestCase(unittest.TestCase):
         for lemma in defs.LEMMAS:
             self.assertIn(
                 lemma,
-                FORMATS["hiragana"].accepted_lemmas(),
+                textformat.HIRAGANA.accepted_lemmas(),
                 "Hiragana table missing a lemma: {}".format(lemma))
 
     def test_hira_to_wapuro(self):
