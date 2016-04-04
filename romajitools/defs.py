@@ -142,90 +142,40 @@ HIRAGANA_TAB = """\
 """
 
 
-# KATAKANA_TAB = """ァ  xa ア  a  ィ  xi イ  i  ゥ  xu
-# ウ  u  ヴ  vu ヴァ va ヴィ vi ヴェ ve
-# ヴォ vo ェ  xe エ  e  ォ  xo オ  o 
+WAPURO_TAB = """\
+a A,   i  I,  u  U,  e  E,  o  O,
+ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
+ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
+sa SA, si SI, su SU, se SE, so SO, sya SYA, syu SYU, syo SYO,
+za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
+ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
+da DA, di DI, du DU, de DE, do DO,
+na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
+ha HA, hi HI, fu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
+pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
+ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
+ya YA,        yu YU,        yo YO,
+ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
+wa WA,                      wo WO,
+n N',
 
-# カ  ka ガ  ga キ  ki キャ kya   キュ kyu 
-# キョ kyo   ギ  gi ギャ gya   ギュ gyu   ギョ gyo 
-# ク  ku グ  gu ケ  ke ゲ  ge コ  ko
-# ゴ  go 
+uxa UXA, uxi  UXI,   uxu UXU,  uxe UXE,  uxo UXO,
+va  VA,  vi   VI,    vu  VU,   ve  VE,   vo  VO,  vya VYA, vyu VYU, vyo VYO,
+                               sye SYE,
+                               zye ZYE,
+         texi TEXI, toxu TOXU,
+                               tye TYE,
+tsa TSA, tsi  TSI,  tse  TSE,            tso TSO,     
+         dexi DEXI, doxu DOXU,                    dya DYA, dyu DYU, dyo DYO,
+fa  FA,  fi   FI,              fe  FE,   fo  FO,  fya FYA, fyu FYU, fyo FYO,
+         yi   YI,              ye  YE,
+         wi   WI,              we  WE,
 
-# サ  sa ザ  za シ  si シャ sya   シュ syu 
-# ショ syo   シェ  sye
-# ジ  zi ジャ zya   ジュ zyu   ジョ zyo 
-# ス  su ズ  zu セ  se ゼ  ze ソ  so
-# ゾ  zo 
+xa XA, xi XI, xu XU, xe XE, xo XO, xya XYA, xyu XYU, xyo XYO, xwa XWA,
 
-# タ  ta ダ  da チ  ti チャ tya   チュ tyu 
-# チョ tyo   ヂ  di ヂャ dya   ヂュ dyu   ヂョ dyo 
-# ティ  ti
-
-# ッ  xtu 
-# ッヴ vvu   ッヴァ   vva   ッヴィ   vvi 
-# ッヴェ   vve   ッヴォ   vvo 
-# ッカ kka   ッガ gga   ッキ kki   ッキャ   kkya 
-# ッキュ   kkyu  ッキョ   kkyo  ッギ ggi   ッギャ   ggya 
-# ッギュ   ggyu  ッギョ   ggyo  ック kku   ッグ ggu 
-# ッケ kke   ッゲ gge   ッコ kko   ッゴ ggo   ッサ ssa 
-# ッザ zza   ッシ ssi   ッシャ   ssya 
-# ッシュ   ssyu  ッショ   ssyo  ッシェ   ssye
-# ッジ zzi   ッジャ   zzya  ッジュ   zzyu  ッジョ   zzyo
-# ッス ssu   ッズ zzu   ッセ sse   ッゼ zze   ッソ sso 
-# ッゾ zzo   ッタ tta   ッダ dda   ッチ tti   ッティ tti
-# ッチャ   ttya  ッチュ   ttyu  ッチョ   ttyo  ッヂ ddi 
-# ッヂャ   ddya  ッヂュ   ddyu  ッヂョ   ddyo  ッツ ttu 
-# ッヅ ddu   ッテ tte   ッデ dde   ット tto   ッド ddo 
-# ッドゥ ddu
-# ッハ hha   ッバ bba   ッパ ppa   ッヒ hhi 
-# ッヒャ   hhya  ッヒュ   hhyu  ッヒョ   hhyo  ッビ bbi 
-# ッビャ   bbya  ッビュ   bbyu  ッビョ   bbyo  ッピ ppi 
-# ッピャ   ppya  ッピュ   ppyu  ッピョ   ppyo  ッフ hhu   ッフュ ffu
-# ッファ   ffa   ッフィ   ffi   ッフェ   ffe   ッフォ   ffo 
-# ッブ bbu   ップ ppu   ッヘ hhe   ッベ bbe   ッペ  ppe
-# ッホ hho   ッボ bbo   ッポ ppo   ッヤ yya   ッユ yyu 
-# ッヨ yyo   ッラ rra   ッリ rri   ッリャ   rrya 
-# ッリュ   rryu  ッリョ   rryo  ッル rru   ッレ rre 
-# ッロ rro 
-
-# ツ  tu ヅ  du テ  te デ  de ト  to
-# ド  do ドゥ  du
-
-# ナ  na ニ  ni ニャ nya   ニュ nyu   ニョ nyo 
-# ヌ  nu ネ  ne ノ  no 
-
-# ハ  ha バ  ba パ  pa ヒ  hi ヒャ hya 
-# ヒュ hyu   ヒョ hyo   ビ  bi ビャ bya   ビュ byu 
-# ビョ byo   ピ  pi ピャ pya   ピュ pyu   ピョ pyo 
-# フ  hu ファ fa フィ fi フェ fe フォ fo
-# フュ  fu
-# ブ  bu プ  pu ヘ  he ベ  be ペ  pe
-# ホ  ho ボ  bo ポ  po 
-
-# マ  ma ミ  mi ミャ mya   ミュ myu   ミョ myo 
-# ム  mu メ  me モ  mo 
-
-# ャ  xya   ヤ  ya ュ  xyu   ユ  yu ョ  xyo
-# ヨ  yo
-
-# ラ  ra リ  ri リャ rya   リュ ryu   リョ ryo 
-# ル  ru レ  re ロ  ro 
-
-# ヮ  xwa   ワ  wa ウィ  wi ヰ wi ヱ  we ウェ we
-# ヲ  wo ウォ  wo ン n 
-
-# ン   n'
-# ディ  dyi
-# ー   -
-# チェ  tye
-# ッチェ   ttye
-# ジェ zye
-# """
+xtu Q,
+-   -
+"""
 
 
-#
-# Tests
-#
-
-# if __name__ == "__main__":
-#     print list(groups(re.split('\s', "a 1 b 2 cc 33,\nddd 444\teee 555")))
