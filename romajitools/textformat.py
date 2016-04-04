@@ -36,10 +36,17 @@ class TextFormat(object):
         self._emit_pattern = None
 
     def __unicode__(self):
-        return "{}\n\n{}\n\n{}\n".format(
+        return (
+            "{}\n"
+            "---------------\n"
+            "{}\n"
+            "\n"
+            "{}\n"
+            .format(
                 unicode(self._name),
                 ",  ".join(" ".join(pair) for pair in self._moras_to_lemmas.iteritems()),
                 ",  ".join(" ".join(pair) for pair in self._lemmas_to_moras.iteritems()))
+            )
 
     @classmethod
     def from_string(cls, name, base_table, from_table=None, to_table=None):
