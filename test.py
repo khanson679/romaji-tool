@@ -10,13 +10,15 @@ from romajitools import *
 
 class RTTestCase(unittest.TestCase):
 
-    def test_lemma_tables(self):
-        # sanity test
+    def test_lemma_list(self):
+        """Check that the number of lemmas in master list is correct."""
         self.assertEqual(len(defs.LEMMAS), 153)
     
     def test_format_lemma_coverage(self):
-        # check that for each format, all produced lemmas are in master list,
-        #   lemmas in master list are converted to format
+        """
+        Check that for each format, all produced lemmas are in master list,
+          lemmas in master list are converted to format.
+        """
         for fmt in FORMATS.itervalues():
             for lemma in fmt.produced_lemmas():
                 self.assertIn(
