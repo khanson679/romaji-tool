@@ -57,32 +57,15 @@ def convert(in_str, in_fmt, out_fmt, in_opts=None, out_opts=None):
 #
 
 def dump_tables():
-    print("--------------------",
-          "Lemma Table - Full",
+    """
+    Print contents of loaded data.
+    """
+    print("Lemma List",
           "--------------------",
           ",  ".join(defs.LEMMAS),
           "Total: {}".format(len(defs.LEMMAS)),
-          sep='\n')
+          sep='\n', end="\n\n")
 
-    # print("--------------------"
-    #       "Lemma Table - Basic"
-    #       "--------------------")
-    # print(LEMMAS_BASIC)
-    # print("Total:", len(LEMMAS_BASIC))
-
-    # print("--------------------"
-    #       "Lemma Table - Extended"
-    #       "--------------------")
-    # print(LEMMAS_EXTENDED)
-    # print("Total:", len(LEMMAS_EXTENDED))
-
-    # print("--------------------"
-    #       "Lemma Table - Extra"
-    #       "--------------------")
-    # print(LEMMAS_EXTRA)
-    # print("Total:", len(LEMMAS_EXTRA))
-
-    print("--------------------"
-          "Hiragana Table"
-          "--------------------")
     print(unicode(FORMATS["hiragana"]).encode('utf-8'))
+
+    print(unicode(FORMATS["wapuro"]).encode('utf-8'))
