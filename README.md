@@ -1,12 +1,11 @@
 # romaji-tools
 
-Library to convert between different forms of Japanese Kana and romanization via an intermediate representation based on "wapuro" style romaji.
+Python library to convert between different forms of Japanese Kana and romanization via an intermediate representation based on "wapuro" style romaji.
 
 ```python
 >>> import romajitools as rt
-
->>> rt.convert(u"ひらがな", in_fmt="hiragana", out_fmt="wapuro")
-u'hiragana'
+>>> rt.convert(u"はんおう", in_fmt="hiragana", out_fmt="wapuro")
+u"han'ou"
 ```
 
 
