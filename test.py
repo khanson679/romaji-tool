@@ -14,18 +14,20 @@ class RTTestCase(unittest.TestCase):
         # sanity test
         self.assertEqual(len(defs.LEMMAS), 153)
     
-    def test_hiragana_lemmas(self):
-        # check that all Hiragana table lemmas in master list, and vis versa
-        for lemma in textformat.HIRAGANA.produced_lemmas():
-            self.assertIn(
-                lemma,
-                defs.LEMMAS,
-                "Lemma from Hiragana table not in lemma list: {}".format(lemma))
-        for lemma in defs.LEMMAS:
-            self.assertIn(
-                lemma,
-                textformat.HIRAGANA.accepted_lemmas(),
-                "Hiragana table missing a lemma: {}".format(lemma))
+    def test_format_lemma_coverage(self):
+        # check that for each format, all produced lemmas are in master list,
+        #   lemmas in master list are converted to format
+        for fmt in FORMATS.itervalues():
+            for lemma in fmt.produced_lemmas():
+                self.assertIn(
+                    lemma,
+                    defs.LEMMAS,
+                    "Lemma '{}' produced by format '{}'' not in master list.".format(fmt.name, lemma))
+            for lemma in defs.LEMMAS:
+                self.assertIn(
+                    lemma,
+                    textformat.HIRAGANA.accepted_lemmas(),
+                    "Lemma '{}' not handled by format '{}'.".format(fmt.name, lemma))
 
     def test_hira_to_wapuro(self):
         # sanity test
