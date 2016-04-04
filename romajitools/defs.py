@@ -80,24 +80,6 @@ SOKUON_CONSONANTS = "KGSZTDHFBP"
 
 
 #----------------------------------------------------------------------------
-# Romaji conversion tables
-#----------------------------------------------------------------------------
-
-WAPURO_TAB = """\
-kk QK,
-gg QG,
-ss QS,
-zz QZ,
-tt QT,
-dd QD,
-hh QH,
-ff QF,
-bb QB,
-pp QP
-"""
-
-
-#----------------------------------------------------------------------------
 # Kana conversion tables
 #
 # Used to map kana <-> lemmas
@@ -123,17 +105,17 @@ HIRAGANA_TAB = """\
 わ WA,                     を WO,
 ん N',
 
-うぁ UXA, うぃ UXI,  うぅ UXU,   うぇ UXE, うぉ UXO,
-ゔぁ VA,  ゔぃ VI,   ゔ VU,    ゔぇ VE,  ゔぉ VO,   ゔゃ VYA, ゔゅ VYU, ゔょ VYO,
-                             しぇ SYE,
-                             じぇ ZYE,
+うぁ UXA, うぃ UXI,  うぅ UXU,  うぇ UXE, うぉ UXO,
+ゔぁ VA,  ゔぃ VI,   ゔ   VU,   ゔぇ VE,  ゔぉ VO,  ゔゃ VYA, ゔゅ VYU, ゔょ VYO,
+                              しぇ SYE,
+                              じぇ ZYE,
          てぃ TEXI, とぅ TOXU,
-                             ちぇ TYE,
+                              ちぇ TYE,
 つぁ TSA, つぃ TSI,  つぇ TSE,           つぉ TSO,     
-         でぃ DEXI, どぅ DOXU,                   ぢゃ DYA, ぢゅ DYU, ぢょ DYO,
+         でぃ DEXI, どぅ DOXU,                    ぢゃ DYA, ぢゅ DYU, ぢょ DYO,
 ふぁ FA,  ふぃ FI,             ふぇ FE,  ふぉ FO,  ふゃ FYA, ふゅ FYU, ふょ FYO,
-         いぃ  YI,            いぇ YE,
-         ゐ WI,         ゑ WE,
+         いぃ YI,             いぇ YE,
+         ゐ WI,               ゑ WE,
 
 ぁ XA, ぃ XI, ぅ XU, ぇ XE, ぉ XO, ゃ XYA, ゅ XYU, ょ XYO, ゎ XWA,
 
@@ -141,6 +123,10 @@ HIRAGANA_TAB = """\
 ー -
 """
 
+
+#----------------------------------------------------------------------------
+# Romaji conversion tables
+#----------------------------------------------------------------------------
 
 WAPURO_TAB = """\
 a A,   i  I,  u  U,  e  E,  o  O,
@@ -176,6 +162,19 @@ xa XA, xi XI, xu XU, xe XE, xo XO, xya XYA, xyu XYU, xyo XYO, xwa XWA,
 
 xtu Q,
 -   -
+"""
+
+WAPURO_SOKUON_TAB = """\
+kk QK,
+gg QG,
+ss QS,
+zz QZ,
+tt QT,
+dd QD,
+hh QH,
+ff QF,
+bb QB,
+pp QP
 """
 
 
