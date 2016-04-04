@@ -65,7 +65,10 @@ class TextFormat(object):
         entry_dict = dict([entry.split() for entry in entry_str_list])
         return entry_dict
 
-
+    @property
+    def name(self):
+        return self._name
+    
     @property
     def parse_pattern(self):
         """
