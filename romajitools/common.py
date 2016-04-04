@@ -3,12 +3,12 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
-from defs import *
-from util import *
-from textformat import TextFormat
+import defs
+import textformat
 
-FORMATS = ("hira", "hira-half", "kata", "kata-half",
-    "wapuro", "kunrei", "hepburn", "hepburn-trad")
+
+FORMATS = {"hiragana" : textformat.HIRAGANA,
+           "wapuro"   : textformat.WAPURO}
 
 
 #
@@ -60,8 +60,8 @@ def dump_tables():
     print("--------------------",
           "Lemma Table - Full",
           "--------------------",
-          ",  ".join(LEMMAS),
-          "Total: {}".format(len(LEMMAS)),
+          ",  ".join(defs.LEMMAS),
+          "Total: {}".format(len(defs.LEMMAS)),
           sep='\n')
 
     # print("--------------------"
@@ -86,23 +86,3 @@ def dump_tables():
           "Hiragana Table"
           "--------------------")
     print(unicode(FORMATS["hiragana"]).encode('utf-8'))
-
-
-#
-# init lemma data
-#
-
-LEMMAS_BASIC    = LEMMA_TAB_BASIC.split()
-LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
-LEMMAS_EXTRA    = LEMMA_TAB_EXTRA.split()
-LEMMAS_SMALL_KANA_POST = LEMMA_TAB_SMALL_KANA_POST.split()
-LEMMAS = (LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA +
-        LEMMAS_SMALL_KANA_POST + [LEMMA_SOKUON, LEMMA_CHOUON])
-
-
-#
-# build formats
-#
-
-FORMATS = {"hiragana" : TextFormat.from_string("Hiragana", HIRAGANA_TAB),
-           "wapuro"   : TextFormat.from_string("Wapuro", WAPURO_TAB)}

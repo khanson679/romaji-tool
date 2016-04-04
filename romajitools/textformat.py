@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 
 import re
 
+import defs
+
 
 class TextFormat(object):
     """
@@ -144,3 +146,11 @@ class TextFormat(object):
         return re.sub(pattern=self.emit_pattern,
                       repl=lambda x: self._lemmas_to_moras[x.group(0)],
                       string=string)
+
+
+#
+# init text formats
+#
+
+HIRAGANA = TextFormat.from_string("Hiragana", defs.HIRAGANA_TAB)
+WAPURO = TextFormat.from_string("Wapuro", defs.WAPURO_TAB)
