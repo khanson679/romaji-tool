@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 
 import unittest
 
 from romajitools import *
+
 
 class RTTestCase(unittest.TestCase):
 
@@ -12,7 +14,6 @@ class RTTestCase(unittest.TestCase):
         # sanity test
         self.assertEqual(len(LEMMAS), 153)
     
-
     def test_hiragana_lemmas(self):
         # check that all Hiragana table lemmas in master list, and vis versa
         for lemma in FORMATS["hiragana"].produced_lemmas():
@@ -26,7 +27,6 @@ class RTTestCase(unittest.TestCase):
                 FORMATS["hiragana"].accepted_lemmas(),
                 "Hiragana table missing a lemma: {}".format(lemma))
 
-        
     def test_hira_to_wapuro(self):
         # sanity test
         self.assertEqual(
