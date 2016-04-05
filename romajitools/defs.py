@@ -128,96 +128,52 @@ HIRAGANA_TAB = """\
 # Romaji conversion tables
 #----------------------------------------------------------------------------
 
-WAPURO_TAB = """\
-a A,   i  I,  u  U,  e  E,  o  O,
-ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
-ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
-sa SA, si SI, su SU, se SE, so SO, sya SYA, syu SYU, syo SYO,
-za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
-ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
-da DA, di DI, du DU, de DE, do DO,
-na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
-ha HA, hi HI, fu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
-ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
-pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
-ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
-ya YA,        yu YU,        yo YO,
-ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
-wa WA,                      wo WO,
-n N',
+# WAPURO_TAB = """\
+# a A,   i  I,  u  U,  e  E,  o  O,
+# ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
+# ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
+# sa SA, si SI, su SU, se SE, so SO, sya SYA, syu SYU, syo SYO,
+# za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
+# ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
+# da DA, di DI, du DU, de DE, do DO,
+# na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
+# ha HA, hi HI, fu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+# ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
+# pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
+# ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
+# ya YA,        yu YU,        yo YO,
+# ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
+# wa WA,                      wo WO,
+# n N',
 
-uxa UXA, uxi  UXI,   uxu UXU,  uxe UXE,  uxo UXO,
-va  VA,  vi   VI,    vu  VU,   ve  VE,   vo  VO,  vya VYA, vyu VYU, vyo VYO,
-                               sye SYE,
-                               zye ZYE,
-         texi TEXI, toxu TOXU,
-                               tye TYE,
-tsa TSA, tsi  TSI,  tse  TSE,            tso TSO,     
-         dexi DEXI, doxu DOXU,                    dya DYA, dyu DYU, dyo DYO,
-fa  FA,  fi   FI,              fe  FE,   fo  FO,  fya FYA, fyu FYU, fyo FYO,
-         yi   YI,              ye  YE,
-         wi   WI,              we  WE,
+# uxa UXA, uxi  UXI,   uxu UXU,  uxe UXE,  uxo UXO,
+# va  VA,  vi   VI,    vu  VU,   ve  VE,   vo  VO,  vya VYA, vyu VYU, vyo VYO,
+#                                sye SYE,
+#                                zye ZYE,
+#          texi TEXI, toxu TOXU,
+#                                tye TYE,
+# tsa TSA, tsi  TSI,  tse  TSE,            tso TSO,     
+#          dexi DEXI, doxu DOXU,                    dya DYA, dyu DYU, dyo DYO,
+# fa  FA,  fi   FI,              fe  FE,   fo  FO,  fya FYA, fyu FYU, fyo FYO,
+#          yi   YI,              ye  YE,
+#          wi   WI,              we  WE,
 
-xa XA, xi XI, xu XU, xe XE, xo XO, xya XYA, xyu XYU, xyo XYO, xwa XWA,
+# xa XA, xi XI, xu XU, xe XE, xo XO, xya XYA, xyu XYU, xyo XYO, xwa XWA,
 
-xtu Q,
--   -
-"""
+# xtu Q,
+# -   -
+# """
 
-NIHON_TAB = """\
-a  A,  i  I,  u  U,  e  E,  o  O,
-ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
-ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
-sa SA, si SI, su SU, se SE, so SO, sya SYA, syu SYU, syo SYO,
-za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
-ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
-da DA, di DI, du DU, de DE, do DO, dya DYA, dyu DYU, dyo DYO,
-na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
-ha HA, hi HI, hu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
-ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
-pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
-ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
-ya YA,        yu YU,        yo YO,
-ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
-wa WA,                      wo WO,
-n N',
-
-kwa KWA,
-gwa GWA
-"""
-
-KUNREI_TAB = """\
-a  A,  i  I,  u  U,  e  E,  o  O,
-ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
-ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
-sa SA, si SI, su SU, se SE, so SO, sya SYA, syu SYU, syo SYO,
-za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
-ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
-da DA, di DI, du DU, de DE, do DO, dya ZYA, dyu ZYU, dyo ZYO,
-na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
-ha HA, hi HI, hu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
-ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
-pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
-ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
-ya YA,        yu YU,        yo YO,
-ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
-wa WA,                      wo WO,
-n N'
-
-kwa KWA,
-gwa GWA
-"""
-
-HEPBURN_TAB_BASE = """\
+ROMAJI_BASE = """\
 a  A,  i   I,  u   U,  e  E,  o  O,
 ka KA, ki  KI, ku  KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
 ga GA, gi  GI, gu  GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
-sa SA, shi SI, su  SU, se SE, so SO, sha SYA, shu SYU, sho SYO,
-za ZA, zi  ZI, zu  ZU, ze ZE, zo ZO, ja  ZYA, ju  ZYU, jo  ZYO,
-ta TA, chi TI, tsu TU, te TE, to TO, cha TYA, chu TYU, cho TYO,
-da DA, di  DI, du  DU, de DE, do DO, ja  ZYA, ju  ZYU, jo  ZYO,
+sa SA,         su  SU, se SE, so SO,
+za ZA, zi  ZI, zu  ZU, ze ZE, zo ZO,
+ta TA,                 te TE, to TO,
+da DA, di  DI, du  DU, de DE, do DO,
 na NA, ni  NI, nu  NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
-ha HA, hi  HI, fu  HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+ha HA, hi  HI,         he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
 ba BA, bi  BI, bu  BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
 pa PA, pi  PI, pu  PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
 ma MA, mi  MI, mu  MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
@@ -227,17 +183,74 @@ wa WA,
 n N'
 """
 
-HEPBURN_TAB_EXTENDED = """\
-         wi  UXI,   wu UXU,  we  UXE, wo   UXO,
-va  VA,  vi   VI,   vu  U,   ve  VE,  vo   VO,   vya VYA, vyu VYU, vyo VYO,
-                             she SYE,
-                             je  ZYE,
-         texi ti,   toxu tu,
-                             che TYE,
-tsa TSA, tsi  TSI,           tse TSE, tso  TSO,     
-         dexi DEXI,                   doxu DOXU,
-fa  FA,  fi   FI,            fe  FE,  fo   FO,   fya FYA, fyu FYU, fyo FYO,
-         yi   YI,            ye  YE,
+BASE_MORA_NIHON = """\
+si SI,
+zi ZI,
+ti TI, tu TU,
+di DI, du DU,
+hu HU,
+"""
+
+BASE_MORA_KUNREI = """\
+si SI,
+zi ZI,
+ti TI, tu TU,
+zi DI, zu DU,
+hu HU,
+"""
+
+BASE_MORA = """\
+shi SI,
+ji  ZI,
+chi TI, tsu TU,
+ji  DI, zu  DU,
+fu  HU,
+"""
+
+WAGYO_NIHON = """\
+wi WI, we WE, wo WO,
+"""
+
+WAGYO_KUNREI = """\
+i WE, e WE, o WO,
+"""
+
+WAGYO_HEPBURN = """\
+i WE, e WE, o WO,
+"""
+
+YOUON_NIHON = """\
+sya SYA, syu SYU, syo SYO,
+zya ZYA, zyu ZYU, zyo ZYO,
+tya TYA, tyu TYU, tyo TYO,
+dya DYA, dyu DYU, dyo DYO,
+"""
+
+YOUON_KUNREI = """\
+sya SYA, syu SYU, syo SYO,
+zya ZYA, zyu ZYU, zyo ZYO,
+tya TYA, tyu TYU, tyo TYO,
+zya DYA, dyu DYU, zyu DYO,
+"""
+
+YOUON_HEPBURN = """\
+sha SYA, shu SYU, sho SYO,
+ja  ZYA, ju  ZYU, jo  ZYO,
+cha TYA, chu TYU, cho TYO,
+ja  DYA, ju  DYU, jo  DYO,
+"""
+
+EXTENDED_HEPBURN = """\
+         wi  UXI,  wu UXU,  we  UXE, wo   UXO,
+va  VA,  vi  VI,   vu U,    ve  VE,  vo   VO,  vya VYA, vyu VYU, vyo VYO,
+                            she SYE,
+                            je  ZYE,
+         ti  TEXI, tu TOXU,
+                            che TYE,
+tsa TSA, tsi TSI,           tse TSE, tso  TSO,     
+         di  DEXI, du DOXU,
+fa  FA,  fi  FI,            fe  FE,  fo   FO,  fya FYA, fyu FYU, fyo FYO,
+         yi  YI,            ye  YE,
 """
 
 SOKUON_BASE = """\
@@ -254,16 +267,16 @@ pp QP
 """
 
 SOKUON_HEPBURN = """\
-tch QCH
+tch QCH,
 ssh QSH
 """
 
 SOKUON_WAPURO = """\
-cch QCH
+cch QCH,
 SSH QSH
 """
 
-YOUON_MACRON = """\
+CHOUON_MACRON = """\
 ā A-,
 ī I-,
 ū U-,
@@ -271,7 +284,7 @@ YOUON_MACRON = """\
 ō O-
 """
 
-YOUON_CIRCUMFLEX = """\
+CHOUON_CIRCUMFLEX = """\
 â A-,
 î I-,
 û U-,
@@ -279,12 +292,28 @@ YOUON_CIRCUMFLEX = """\
 ô O-
 """
 
-YOUON_DOUBLE_VOWEL = """\
+CHOUON_DOUBLE_VOWEL = """\
 aa A-
 ii I-
 uu U-
 ee E-
 oo O-
+"""
+
+NASAL_BASE = """\
+n' N'
+"""
+
+NASAL_BEFORE_BPM_CONSTANT = """
+nb N'B,
+np N'P,
+nm N'M
+"""
+
+NASAL_BEFORE_BPM_IS_M = """
+mb N'B,
+mp N'P,
+mm N'M
 """
 
 
