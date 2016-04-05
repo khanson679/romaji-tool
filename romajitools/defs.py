@@ -188,7 +188,7 @@ si SI,
 zi ZI,
 ti TI, tu TU,
 di DI, du DU,
-hu HU,
+hu HU
 """
 
 BASE_MORA_KUNREI = """\
@@ -196,7 +196,7 @@ si SI,
 zi ZI,
 ti TI, tu TU,
 zi DI, zu DU,
-hu HU,
+hu HU
 """
 
 BASE_MORA = """\
@@ -204,40 +204,40 @@ shi SI,
 ji  ZI,
 chi TI, tsu TU,
 ji  DI, zu  DU,
-fu  HU,
+fu  HU
 """
 
 WAGYO_NIHON = """\
-wi WI, we WE, wo WO,
+wi WI, we WE, wo WO
 """
 
 WAGYO_KUNREI = """\
-i WE, e WE, o WO,
+i WE, e WE, o WO
 """
 
 WAGYO_HEPBURN = """\
-i WE, e WE, o WO,
+i WE, e WE, o WO
 """
 
 YOUON_NIHON = """\
 sya SYA, syu SYU, syo SYO,
 zya ZYA, zyu ZYU, zyo ZYO,
 tya TYA, tyu TYU, tyo TYO,
-dya DYA, dyu DYU, dyo DYO,
+dya DYA, dyu DYU, dyo DYO
 """
 
 YOUON_KUNREI = """\
 sya SYA, syu SYU, syo SYO,
 zya ZYA, zyu ZYU, zyo ZYO,
 tya TYA, tyu TYU, tyo TYO,
-zya DYA, dyu DYU, zyu DYO,
+zya DYA, dyu DYU, zyu DYO
 """
 
 YOUON_HEPBURN = """\
 sha SYA, shu SYU, sho SYO,
 ja  ZYA, ju  ZYU, jo  ZYO,
 cha TYA, chu TYU, cho TYO,
-ja  DYA, ju  DYU, jo  DYO,
+ja  DYA, ju  DYU, jo  DYO
 """
 
 EXTENDED_HEPBURN = """\
@@ -250,7 +250,7 @@ va  VA,  vi  VI,   vu U,    ve  VE,  vo   VO,  vya VYA, vyu VYU, vyo VYO,
 tsa TSA, tsi TSI,           tse TSE, tso  TSO,     
          di  DEXI, du DOXU,
 fa  FA,  fi  FI,            fe  FE,  fo   FO,  fya FYA, fyu FYU, fyo FYO,
-         yi  YI,            ye  YE,
+         yi  YI,            ye  YE
 """
 
 SOKUON_BASE = """\
@@ -293,10 +293,10 @@ CHOUON_CIRCUMFLEX = """\
 """
 
 CHOUON_DOUBLE_VOWEL = """\
-aa A-
-ii I-
-uu U-
-ee E-
+aa A-,
+ii I-,
+uu U-,
+ee E-,
 oo O-
 """
 
