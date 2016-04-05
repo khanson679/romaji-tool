@@ -164,26 +164,26 @@ HIRAGANA_TAB = """\
 # -   -
 # """
 
-ROMAJI_BASE = """\
-a  A,  i   I,  u   U,  e  E,  o  O,
-ka KA, ki  KI, ku  KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
-ga GA, gi  GI, gu  GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
-sa SA,         su  SU, se SE, so SO,
-za ZA, zi  ZI, zu  ZU, ze ZE, zo ZO,
-ta TA,                 te TE, to TO,
-da DA, di  DI, du  DU, de DE, do DO,
-na NA, ni  NI, nu  NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
-ha HA, hi  HI,         he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
-ba BA, bi  BI, bu  BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
-pa PA, pi  PI, pu  PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
-ma MA, mi  MI, mu  MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
-ya YA,         yu  YU,        yo YO,
-ra RA, ri RI,  ru  RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
+ROMAJI_MORAS_BASE = """\
+a  A,  i  I,  u  U,  e  E,  o  O,
+ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
+ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
+sa SA,        su SU, se SE, so SO,
+za ZA, zi ZI, zu ZU, ze ZE, zo ZO,
+ta TA,               te TE, to TO,
+da DA, di DI, du DU, de DE, do DO,
+na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
+ha HA, hi HI,        he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
+pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
+ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
+ya YA,        yu YU,        yo YO,
+ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
 wa WA,
 n N'
 """
 
-BASE_MORA_NIHON = """\
+BASE_MORAS_NIHON = """\
 si SI,
 zi ZI,
 ti TI, tu TU,
@@ -191,7 +191,7 @@ di DI, du DU,
 hu HU
 """
 
-BASE_MORA_KUNREI = """\
+BASE_MORAS_KUNREI = """\
 si SI,
 zi ZI,
 ti TI, tu TU,
@@ -199,7 +199,7 @@ zi DI, zu DU,
 hu HU
 """
 
-BASE_MORA = """\
+BASE_MORAS_HEPBURN = """\
 shi SI,
 ji  ZI,
 chi TI, tsu TU,
@@ -240,7 +240,7 @@ cha TYA, chu TYU, cho TYO,
 ja  DYA, ju  DYU, jo  DYO
 """
 
-EXTENDED_HEPBURN = """\
+ADDED_MORAS_HEPBURN = """\
          wi  UXI,  wu UXU,  we  UXE, wo   UXO,
 va  VA,  vi  VI,   vu U,    ve  VE,  vo   VO,  vya VYA, vyu VYU, vyo VYO,
                             she SYE,
