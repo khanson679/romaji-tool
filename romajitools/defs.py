@@ -164,7 +164,80 @@ xtu Q,
 -   -
 """
 
-WAPURO_SOKUON_TAB = """\
+NIHON_TAB = """\
+a  A,  i  I,  u  U,  e  E,  o  O,
+ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
+ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
+sa SA, si SI, su SU, se SE, so SO, sya SYA, syu SYU, syo SYO,
+za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
+ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
+da DA, di DI, du DU, de DE, do DO, dya DYA, dyu DYU, dyo DYO,
+na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
+ha HA, hi HI, hu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
+pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
+ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
+ya YA,        yu YU,        yo YO,
+ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
+wa WA,                      wo WO,
+n N',
+
+kwa KWA,
+gwa GWA
+"""
+
+KUNREI_TAB = """\
+a  A,  i  I,  u  U,  e  E,  o  O,
+ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
+ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
+sa SA, si SI, su SU, se SE, so SO, sya SYA, syu SYU, syo SYO,
+za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
+ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
+da DA, di DI, du DU, de DE, do DO, dya ZYA, dyu ZYU, dyo ZYO,
+na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
+ha HA, hi HI, fu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
+pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
+ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
+ya YA,        yu YU,        yo YO,
+ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
+wa WA,                      wo WO,
+n N'
+"""
+
+HEPBURN_TAB_BASE = """\
+a  A,  i   I,  u   U,  e  E,  o  O,
+ka KA, ki  KI, ku  KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
+ga GA, gi  GI, gu  GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
+sa SA, shi SI, su  SU, se SE, so SO, sha SYA, shu SYU, sho SYO,
+za ZA, zi  ZI, zu  ZU, ze ZE, zo ZO, ja  ZYA, ju  ZYU, jo  ZYO,
+ta TA, chi TI, tsu TU, te TE, to TO, cha TYA, chu TYU, cho TYO,
+da DA, di  DI, du  DU, de DE, do DO, ja  ZYA, ju  ZYU, jo  ZYO,
+na NA, ni  NI, nu  NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
+ha HA, hi  HI, fu  HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+ba BA, bi  BI, bu  BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
+pa PA, pi  PI, pu  PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
+ma MA, mi  MI, mu  MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
+ya YA,         yu  YU,        yo YO,
+ra RA, ri RI,  ru  RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
+wa WA,
+n N'
+"""
+
+HEPBURN_TAB_EXTENDED = """\
+         wi  UXI,   wu UXU,  we  UXE, wo   UXO,
+va  VA,  vi   VI,   vu  U,   ve  VE,  vo   VO,   vya VYA, vyu VYU, vyo VYO,
+                             she SYE,
+                             je  ZYE,
+         texi ti,   toxu tu,
+                             che TYE,
+tsa TSA, tsi  TSI,           tse TSE, tso  TSO,     
+         dexi DEXI,                   doxu DOXU,
+fa  FA,  fi   FI,            fe  FE,  fo   FO,   fya FYA, fyu FYU, fyo FYO,
+         yi   YI,            ye  YE,
+"""
+
+SOKUON_BASE = """\
 kk QK,
 gg QG,
 ss QS,
@@ -175,6 +248,40 @@ hh QH,
 ff QF,
 bb QB,
 pp QP
+"""
+
+SOKUON_HEPBURN = """\
+tch QCH
+ssh QSH
+"""
+
+SOKUON_WAPURO = """\
+cch QCH
+SSH QSH
+"""
+
+YOUON_MACRON = """\
+ā A-,
+ī I-,
+ū U-,
+ē E-,
+ō O-
+"""
+
+YOUON_CIRCUMFLEX = """\
+â A-,
+î I-,
+û U-,
+ê E-,
+ô O-
+"""
+
+YOUON_DOUBLE_VOWEL = """\
+aa A-
+ii I-
+uu U-
+ee E-
+oo O-
 """
 
 
