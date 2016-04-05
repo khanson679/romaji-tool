@@ -195,7 +195,7 @@ za ZA, zi ZI, zu ZU, ze ZE, zo ZO, zya ZYA, zyu ZYU, zyo ZYO,
 ta TA, ti TI, tu TU, te TE, to TO, tya TYA, tyu TYU, tyo TYO,
 da DA, di DI, du DU, de DE, do DO, dya ZYA, dyu ZYU, dyo ZYO,
 na NA, ni NI, nu NU, ne NE, no NO, nya NYA, nyu NYU, nyo NYO,
-ha HA, hi HI, fu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
+ha HA, hi HI, hu HU, he HE, ho HO, hya HYA, hyu HYU, hyo HYO,
 ba BA, bi BI, bu BU, be BE, bo BO, bya BYA, byu BYU, byo BYO,
 pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
 ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
@@ -203,6 +203,9 @@ ya YA,        yu YU,        yo YO,
 ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
 wa WA,                      wo WO,
 n N'
+
+kwa KWA,
+gwa GWA
 """
 
 HEPBURN_TAB_BASE = """\
