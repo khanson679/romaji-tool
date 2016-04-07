@@ -2,6 +2,21 @@
 
 from __future__ import unicode_literals
 
+import re
+
+
+def _read_table(tablestr):
+    """
+    Take a table of the form "repr lemma, repr lemma, ..."
+    and return a dictionary of representations to lemmas.
+
+    Split on commas (ignoring adjacent whitespace), then on spaces.
+    """
+    entry_str_list = re.split("\s*,\s*", tablestr)
+    entry_dict = [entry.split() for entry in entry_str_list]
+    return entry_dict
+
+
 def join_maps_at_shared_char(prefixmap, suffixmap):
     """
     Given a list of 2-tuples of strings, yields a generator for all combinations

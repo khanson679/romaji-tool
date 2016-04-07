@@ -48,30 +48,6 @@ class TextFormat(object):
                 ",  ".join(" ".join(pair) for pair in self._lemmas_to_moras.iteritems()))
             )
 
-    @classmethod
-    def from_string(cls, name, base_table, from_table=None, to_table=None):
-        """
-        Read mapping tables and return an object constructed from those tables.
-        """
-        base_map = cls._read_table(base_table)
-        from_map = cls._read_table(from_table) if from_table is not None else None
-        to_map = cls._read_table(to_table) if from_table is not None else None
-
-        return cls(name, base_map, to_map, from_map)
-
-
-    @staticmethod
-    def _read_table(table):
-        """
-        Take a table of the form "repr lemma, repr lemma, ..."
-        and return a dictionary of representations to lemmas.
-
-        Split on commas (ignoring adjacent whitespace), then on spaces.
-        """
-        entry_str_list = re.split("\s*,\s*", table)
-        entry_dict = dict([entry.split() for entry in entry_str_list])
-        return entry_dict
-
     @property
     def name(self):
         return self._name
@@ -162,5 +138,5 @@ class TextFormat(object):
 # init text formats
 #
 
-HIRAGANA = TextFormat.from_string("Hiragana", defs.HIRAGANA_TAB)
-WAPURO = TextFormat.from_string("Wapuro", defs.WAPURO_TAB)
+HIRAGANA = TextFormat("Hiragana", defs.HIRAGANA_TAB)
+WAPURO = TextFormat("Wapuro", defs.WAPURO_TAB)
