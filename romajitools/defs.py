@@ -3,6 +3,10 @@
 
 from __future__ import unicode_literals
 
+import util
+# from mapping import Mapping
+
+
 """
 defs.py
 
@@ -87,7 +91,7 @@ SOKUON_CONSONANTS = "KGSZTDHFBP"
 #   <http://kakasi.namazu.org/>
 #----------------------------------------------------------------------------
 
-HIRAGANA_TAB = """\
+HIRAGANA_TAB = util.read_table("""\
 あ A,  い I,  う U,  え E,  お O,
 か KA, き KI, く KU, け KE, こ KO, きゃ KYA, きゅ KYU, きょ KYO,
 が GA, ぎ GI, ぐ GU, げ GE, ご GO, ぎゃ GYA, ぎゅ GYU, ぎょ GYO,
@@ -121,7 +125,7 @@ HIRAGANA_TAB = """\
 
 っ Q,
 ー -
-"""
+""")
 
 
 #----------------------------------------------------------------------------
@@ -164,7 +168,7 @@ HIRAGANA_TAB = """\
 # -   -
 # """
 
-ROMAJI_MORAS_BASE = """\
+ROMAJI_MORAS_BASE = util.read_table("""\
 a  A,  i  I,  u  U,  e  E,  o  O,
 ka KA, ki KI, ku KU, ke KE, ko KO, kya KYA, kyu KYU, kyo KYO,
 ga GA, gi GI, gu GU, ge GE, go GO, gya GYA, gyu GYU, gyo GYO,
@@ -180,67 +184,59 @@ ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
 ya YA,        yu YU,        yo YO,
 ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
 wa WA,
-n N'
-"""
 
-BASE_MORAS_NIHON = """\
+kwa KWA,
+gwa GWA
+""")
+
+MORAS_NIHON = util.read_table("""\
 si SI,
 zi ZI,
 ti TI, tu TU,
 di DI, du DU,
 hu HU
-"""
 
-BASE_MORAS_KUNREI = """\
-si SI,
-zi ZI,
-ti TI, tu TU,
-zi DI, zu DU,
-hu HU
-"""
-
-BASE_MORAS_HEPBURN = """\
-shi SI,
-ji  ZI,
-chi TI, tsu TU,
-ji  DI, zu  DU,
-fu  HU
-"""
-
-WAGYO_NIHON = """\
-wi WI, we WE, wo WO
-"""
-
-WAGYO_KUNREI = """\
-i WE, e WE, o WO
-"""
-
-WAGYO_HEPBURN = """\
-i WE, e WE, o WO
-"""
-
-YOUON_NIHON = """\
 sya SYA, syu SYU, syo SYO,
 zya ZYA, zyu ZYU, zyo ZYO,
 tya TYA, tyu TYU, tyo TYO,
 dya DYA, dyu DYU, dyo DYO
-"""
+""")
 
-YOUON_KUNREI = """\
+MORAS_KUNREI = util.read_table("""\
+si SI,
+zi ZI,
+ti TI, tu TU,
+hu HU
+
 sya SYA, syu SYU, syo SYO,
 zya ZYA, zyu ZYU, zyo ZYO,
-tya TYA, tyu TYU, tyo TYO,
-zya DYA, dyu DYU, zyu DYO
-"""
+tya TYA, tyu TYU, tyo TYO
+""")
 
-YOUON_HEPBURN = """\
+MORAS_KUNREI_OUTONLY = util.read_table("""
+zi DI, zu DU, zya DYA, dyu DYU, zyu DYO
+""")
+
+MORAS_HEPBURN = util.read_table("""\
+shi SI,
+ji  ZI,
+chi TI, tsu TU,
+fu  HU,
+
 sha SYA, shu SYU, sho SYO,
 ja  ZYA, ju  ZYU, jo  ZYO,
-cha TYA, chu TYU, cho TYO,
-ja  DYA, ju  DYU, jo  DYO
-"""
+cha TYA, chu TYU, cho TYO
+""")
 
-ADDED_MORAS_HEPBURN = """\
+MORAS_HEPBURN_OUTONLY = util.read_table("""\
+ji DI, zu DU, ja DYA, ju DYU, jo DYO
+""")
+
+ARCHAIC_WAGYO_RETAIN_W = util.read_table("wi WI, we WE, wo WO")
+
+ARCHAIC_WAGYO_DROP_W = util.read_table("i WE, e WE, o WO")
+
+MORAS_EXTENDED = util.read_table("""\
          wi  UXI,  wu UXU,  we  UXE, wo   UXO,
 va  VA,  vi  VI,   vu U,    ve  VE,  vo   VO,  vya VYA, vyu VYU, vyo VYO,
                             she SYE,
@@ -251,9 +247,9 @@ tsa TSA, tsi TSI,           tse TSE, tso  TSO,
          di  DEXI, du DOXU,
 fa  FA,  fi  FI,            fe  FE,  fo   FO,  fya FYA, fyu FYU, fyo FYO,
          yi  YI,            ye  YE
-"""
+""")
 
-SOKUON_BASE = """\
+SOKUON_BASE = util.read_table("""\
 kk QK,
 gg QG,
 ss QS,
@@ -261,60 +257,75 @@ zz QZ,
 tt QT,
 dd QD,
 hh QH,
-ff QF,
 bb QB,
 pp QP
-"""
+""")
 
-SOKUON_HEPBURN = """\
+SOKUON_HEPBURN = util.read_table("""\
+jj  QJ,
 tch QCH,
-ssh QSH
-"""
+ff  QF,
+""")
 
-SOKUON_WAPURO = """\
-cch QCH,
-SSH QSH
-"""
+SOKUON_HEPBURN_WAPURO = util.read_table("""\
+cch QCH
+""")
 
-CHOUON_MACRON = """\
+CHOUON_MACRON = util.read_table("""\
 ā A-,
 ī I-,
 ū U-,
 ē E-,
 ō O-
-"""
+""")
 
-CHOUON_CIRCUMFLEX = """\
+CHOUON_CIRCUMFLEX = util.read_table("""\
 â A-,
 î I-,
 û U-,
 ê E-,
 ô O-
-"""
+""")
 
-CHOUON_DOUBLE_VOWEL = """\
+CHOUON_DOUBLE_VOWEL = util.read_table("""\
 aa A-,
 ii I-,
 uu U-,
 ee E-,
 oo O-
-"""
+""")
 
-NASAL_BASE = """\
-n' N'
-"""
+NASAL_BASE = util.read_table("""\
+n'a N'A,
+n'i N'A,
+n'u N'A,
+n'e N'A,
+n'o N'A,
+nk  N'K,
+ng  N'G,
+ns  N'S,
+nz  N'Z,
+nt  N'T,
+nd  N'D,
+nn  N'N,
+nh  N'H,
+nm  N'M,
+n'y N'Y,
+nr  N'R,
+nw  N'W
+""")
 
-NASAL_BEFORE_BPM_CONSTANT = """
-nb N'B,
-np N'P,
-nm N'M
-"""
+NASAL_EXTENDED = util.read_table("""\
+nj N'J,
+nf N'F, 
+nv N'V
+""")
 
-NASAL_BEFORE_BPM_IS_M = """
-mb N'B,
+NASAL_ALTERNATE_WITH_M = util.read_table("""\
 mp N'P,
+mb N'B,
 mm N'M
-"""
+""")
 
 
 #
