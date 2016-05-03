@@ -32,8 +32,10 @@ class TextFormat(object):
         self._moras_to_lemmas = dict(base_map, **from_map)
         self._lemmas_to_moras = dict(inverse_base_map, **to_map)
         
-        self._parse_pattern = None
-        self._emit_pattern = None
+        self._parse_pattern = re.compile(
+            "|".join(sorted(self._moras_to_lemmas.keys(), key=len, reverse=True)))
+        self._emit_pattern = re.compile(
+            "|".join(sorted(self._lemmas_to_moras.keys(), key=len, reverse=True)))
 
     def __unicode__(self):
         return (
@@ -52,34 +54,6 @@ class TextFormat(object):
     def name(self):
         return self._name
     
-    @property
-    def parse_pattern(self):
-        """
-        Return a regex pattern for union of the base map and "to" map.
-
-        Sorted so that longer sequences get matched first.
-        This ensures that multi-kana moras are matched correctly.
-        """
-        if self._parse_pattern is None:
-            self._parse_pattern = re.compile(
-            "|".join(sorted(self._moras_to_lemmas.keys(), key=len, reverse=True)))
-        return self._parse_pattern
-
-
-    @property
-    def emit_pattern(self):
-        """
-        Return a regex pattern for union of the base map and "to" map.
-
-        Sorted so that longer sequences get matched first.
-        This ensures that multi-kana lemmas are matched correctly.
-        """
-        if self._emit_pattern is None:
-            self._emit_pattern = re.compile(
-            "|".join(sorted(self._lemmas_to_moras.keys(), key=len, reverse=True)))
-        return self._emit_pattern
-
-
     def accepted_moras(self):
         """
         Returns iterator over list of keys in mapping from format to internal rep.
@@ -112,7 +86,7 @@ class TextFormat(object):
         """
         Returns True if string matches format, False otherwise.
         """
-        return re.match(pattern=self.parse_pattern,
+        return re.match(pattern=self._parse_pattern,
                         string=string)
 
 
@@ -120,7 +94,7 @@ class TextFormat(object):
         """
         Return a string converted to the internal representation.
         """
-        return re.sub(pattern=self.parse_pattern,
+        return re.sub(pattern=self._parse_pattern,
                       repl=lambda x: self._moras_to_lemmas[x.group(0)],
                       string=string)
 
@@ -129,7 +103,7 @@ class TextFormat(object):
         """
         Return a string converted to this format.
         """
-        return re.sub(pattern=self.emit_pattern,
+        return re.sub(pattern=self._emit_pattern,
                       repl=lambda x: self._lemmas_to_moras[x.group(0)],
                       string=string)
 
