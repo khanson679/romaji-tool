@@ -194,7 +194,7 @@ si SI,
 zi ZI,
 ti TI, tu TU,
 di DI, du DU,
-hu HU
+hu HU,
 
 sya SYA, syu SYU, syo SYO,
 zya ZYA, zyu ZYU, zyo ZYO,
@@ -206,7 +206,7 @@ MORAS_KUNREI = util.read_table("""\
 si SI,
 zi ZI,
 ti TI, tu TU,
-hu HU
+hu HU,
 
 sya SYA, syu SYU, syo SYO,
 zya ZYA, zyu ZYU, zyo ZYO,
@@ -264,7 +264,7 @@ pp QP
 SOKUON_HEPBURN = util.read_table("""\
 jj  QJ,
 tch QCH,
-ff  QF,
+ff  QF
 """)
 
 SOKUON_HEPBURN_WAPURO = util.read_table("""\
