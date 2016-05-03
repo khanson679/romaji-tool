@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 import re
 
 
-def _read_table(tablestr):
+def read_table(tablestr):
     """
     Take a table of the form "repr lemma, repr lemma, ..."
     and return a dictionary of representations to lemmas.
@@ -13,7 +13,7 @@ def _read_table(tablestr):
     Split on commas (ignoring adjacent whitespace), then on spaces.
     """
     entry_str_list = re.split("\s*,\s*", tablestr)
-    entry_dict = [entry.split() for entry in entry_str_list]
+    entry_dict = dict([entry.split() for entry in entry_str_list])
     return entry_dict
 
 
