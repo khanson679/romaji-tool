@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import unittest
@@ -36,6 +36,27 @@ class RTTestCase(unittest.TestCase):
         self.assertEqual(
             convert("ひらがな", in_fmt="hiragana", out_fmt="wapuro"),
             "hiragana")
+
+    def test_hira_to_kunrei(self):
+        self.assertEqual(
+            convert("しち", in_fmt="hiragana", out_fmt="kunrei"),
+            "siti")
+
+    def test_kunrei_to_hira(self):
+        self.assertEqual(
+            convert("siti", in_fmt="kunrei", out_fmt="hiragana"),
+            "しち")
+
+    def test_hira_to_hepburn(self):
+        self.assertEqual(
+            convert("しち", in_fmt="hiragana", out_fmt="hepburn"),
+            "shichi")
+
+    def test_hepburn_to_hira_(self):
+        self.assertEqual(
+            convert("shichi", in_fmt="hepburn", out_fmt="hiragana"),
+            "しち")
+
 
 
 if __name__ == '__main__':
