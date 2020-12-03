@@ -18,12 +18,12 @@ class TextFormat(object):
         self._name = name
         self._mapping = mapping
 
-    def __unicode__(self):
+    def __str__(self):
         return (
             "{}\n"
             "---------------\n"
             "{}\n"
-            .format(str(self._name), str(self.mapping))
+            .format(str(self._name), str(self._mapping))
         )
 
     @property
@@ -73,6 +73,14 @@ class RomajiFormat(TextFormat):
         self._sokuon_map = sokuon
         self._chouon_map = chouon
 
+    def __str__(self):
+        return (
+            "{}\n"
+            "---------------\n"
+            "{}\n"
+            .format(str(self._name), str(self._base_map))
+        )
+
     def accepted_lemmas(self):
         return self._base_map.accepted_internal_substrings()
 
@@ -112,6 +120,16 @@ WAPURO   = TextFormat("Wapuro", mapping.Mapping())
 HIRAGANA = TextFormat("Hiragana", mapping.Mapping(defs.HIRAGANA_TAB))
 NIHON    = RomajiFormat("Nihon",
                         mapping.Mapping(defs.MORAS_NIHON),
+                        mapping.Mapping(defs.NASAL_BASE),
+                        mapping.Mapping(defs.SOKUON_BASE),
+                        mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
+KUNREI   = RomajiFormat("Kunrei",
+                        mapping.Mapping(defs.MORAS_KUNREI, None, defs.MORAS_KUNREI_OUTONLY),
+                        mapping.Mapping(defs.NASAL_BASE),
+                        mapping.Mapping(defs.SOKUON_BASE),
+                        mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
+HEPBURN  = RomajiFormat("Hepburn",
+                        mapping.Mapping(defs.MORAS_HEPBURN, None, defs.MORAS_HEPBURN_OUTONLY),
                         mapping.Mapping(defs.NASAL_BASE),
                         mapping.Mapping(defs.SOKUON_BASE),
                         mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))

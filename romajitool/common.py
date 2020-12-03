@@ -5,7 +5,9 @@ from . import textformat
 
 
 FORMATS = {"hiragana" : textformat.HIRAGANA,
-           "wapuro"   : textformat.WAPURO}
+           "wapuro"   : textformat.WAPURO,
+           "kunrei"   : textformat.KUNREI,
+           "hepburn"  : textformat.HEPBURN}
 
 
 #
