@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
-import util
+from . import util
 # from mapping import Mapping
 
 
@@ -115,7 +113,7 @@ HIRAGANA_TAB = util.read_table("""\
                               じぇ ZYE,
          てぃ TEXI, とぅ TOXU,
                               ちぇ TYE,
-つぁ TSA, つぃ TSI,  つぇ TSE,           つぉ TSO,     
+つぁ TSA, つぃ TSI,  つぇ TSE,           つぉ TSO,
          でぃ DEXI, どぅ DOXU,                    ぢゃ DYA, ぢゅ DYU, ぢょ DYO,
 ふぁ FA,  ふぃ FI,             ふぇ FE,  ふぉ FO,  ふゃ FYA, ふゅ FYU, ふょ FYO,
          いぃ YI,             いぇ YE,
@@ -156,7 +154,7 @@ HIRAGANA_TAB = util.read_table("""\
 #                                zye ZYE,
 #          texi TEXI, toxu TOXU,
 #                                tye TYE,
-# tsa TSA, tsi  TSI,  tse  TSE,            tso TSO,     
+# tsa TSA, tsi  TSI,  tse  TSE,            tso TSO,
 #          dexi DEXI, doxu DOXU,                    dya DYA, dyu DYU, dyo DYO,
 # fa  FA,  fi   FI,              fe  FE,   fo  FO,  fya FYA, fyu FYU, fyo FYO,
 #          yi   YI,              ye  YE,
@@ -243,7 +241,7 @@ va  VA,  vi  VI,   vu U,    ve  VE,  vo   VO,  vya VYA, vyu VYU, vyo VYO,
                             je  ZYE,
          ti  TEXI, tu TOXU,
                             che TYE,
-tsa TSA, tsi TSI,           tse TSE, tso  TSO,     
+tsa TSA, tsi TSI,           tse TSE, tso  TSO,
          di  DEXI, du DOXU,
 fa  FA,  fi  FI,            fe  FE,  fo   FO,  fya FYA, fyu FYU, fyo FYO,
          yi  YI,            ye  YE
@@ -317,7 +315,7 @@ nw  N'W
 
 NASAL_EXTENDED = util.read_table("""\
 nj N'J,
-nf N'F, 
+nf N'F,
 nv N'V
 """)
 

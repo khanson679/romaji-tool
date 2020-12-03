@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 
-from __future__ import unicode_literals
-from __future__ import print_function
-
-import defs
-import textformat
+from . import defs
+from . import textformat
 
 
 FORMATS = {"hiragana" : textformat.HIRAGANA,
@@ -66,6 +63,6 @@ def dump_tables():
           "Total: {}".format(len(defs.LEMMAS)),
           sep='\n', end="\n\n")
 
-    print(unicode(FORMATS["hiragana"]).encode('utf-8'))
+    print(str(FORMATS["hiragana"]).encode('utf-8'))
 
-    print(unicode(FORMATS["wapuro"]).encode('utf-8'))
+    print(str(FORMATS["wapuro"]).encode('utf-8'))

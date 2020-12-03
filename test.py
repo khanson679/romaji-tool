@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
 import unittest
 
 from romajitool import *
@@ -21,7 +19,7 @@ class RTTestCase(unittest.TestCase):
         Check that for each format, all produced lemmas are in master list,
           lemmas in master list are converted to format.
         """
-        for fmt in FORMATS.itervalues():
+        for fmt in FORMATS.values():
             for lemma in fmt.produced_lemmas():
                 self.assertIn(
                     lemma,

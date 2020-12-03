@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
 import re
 
-import util
+from . import util
 
 
 class Mapping(object):
@@ -27,18 +25,18 @@ class Mapping(object):
         if out_map is None:
             out_map = {}
 
-        inverse_base_map = {lemma:text for text, lemma in base_map.iteritems()}
+        inverse_base_map = {lemma:text for text, lemma in base_map.items()}
 
         self._surface_to_underlying = dict(base_map, **in_map)
         self._underlying_to_surface = dict(inverse_base_map, **out_map)
-            
+
         self._parse_pattern = re.compile(
             "$" + \
-            "|".join(sorted(self._surface_to_underlying.keys(), key=len, reverse=True)) + \
+            "|".join(sorted(list(self._surface_to_underlying.keys()), key=len, reverse=True)) + \
             "^")
         self._emit_pattern = re.compile(
             "$" + \
-            "|".join(sorted(self._underlying_to_surface.keys(), key=len, reverse=True)) + \
+            "|".join(sorted(list(self._underlying_to_surface.keys()), key=len, reverse=True)) + \
             "^")
 
     def __unicode__(self):
@@ -49,34 +47,34 @@ class Mapping(object):
             "\n"
             "{}\n"
             .format(
-                unicode(self._name),
-                ",  ".join(" ".join(pair) for pair in self._surface_to_underlying.iteritems()),
-                ",  ".join(" ".join(pair) for pair in self._underlying_to_surface.iteritems()))
+                str(self._name),
+                ",  ".join(" ".join(pair) for pair in self._surface_to_underlying.items()),
+                ",  ".join(" ".join(pair) for pair in self._underlying_to_surface.items()))
             )
-    
+
     def accepted_surface_substrings(self):
         """
         Returns iterator over list of keys in mapping from format to internal rep.
         """
-        return self._surface_to_underlying.iterkeys()
+        return iter(self._surface_to_underlying.keys())
 
     def accepted_internal_substrings(self):
         """
         Returns iterator over list of keys in mapping to format from internal rep.
         """
-        return self._underlying_to_surface.iterkeys()
+        return iter(self._underlying_to_surface.keys())
 
     def produced_surface_substrings(self):
         """
         Returns iterator over list of values in mapping to surface from internal rep.
         """
-        return self._underlying_to_surface.itervalues()
+        return iter(self._underlying_to_surface.values())
 
     def produced_internal_substrings(self):
         """
         Returns iterator over list of values in mapping from surface to internal rep.
         """
-        return self._surface_to_underlying.itervalues()
+        return iter(self._surface_to_underlying.values())
 
     def match_surface(self, string):
         """

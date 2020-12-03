@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
 import re
 
 
@@ -30,7 +28,7 @@ def join_maps_at_shared_char(prefixmap, suffixmap):
             comb_surface = join_at_shared_char(pre_surface, suf_surface)
             comb_underlying = join_at_shared_char(pre_underlying, suf_underlying)
             if comb_surface is not None and comb_underlying is not None:
-                yield (comb_surface, comb_underlying) 
+                yield (comb_surface, comb_underlying)
 
 def join_at_shared_char(s1, s2):
     return "".join((s1[:-1], s2[1:])) if s1[-1] == s2[0] else None

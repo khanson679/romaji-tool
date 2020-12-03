@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
 import re
 
-import defs
-import mapping
+from . import defs
+from . import mapping
 
 class TextFormat(object):
     """
@@ -25,13 +23,13 @@ class TextFormat(object):
             "{}\n"
             "---------------\n"
             "{}\n"
-            .format(unicode(self._name), unicode(self.mapping))
+            .format(str(self._name), str(self.mapping))
         )
 
     @property
     def name(self):
         return self._name
-    
+
     def accepted_lemmas(self):
         return self._mapping.accepted_internal_substrings()
 
@@ -63,7 +61,7 @@ class RomajiFormat(TextFormat):
         Build format from the given lists of Mappings.
 
         Moras that are not handled will be unchanded during conversion.
-        
+
         base -- base moras and you-on
         nasal -- nasal mora with preceding consonants
         sokuon -- sokuon moras with proceding consonants
