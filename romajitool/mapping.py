@@ -26,9 +26,10 @@ class Mapping(object):
             out_map = {}
 
         inverse_base_map = {lemma:text for text, lemma in base_map.items()}
+        out_map = {lemma:text for text, lemma in out_map.items()}
 
-        self._surface_to_underlying = dict(base_map, **in_map)
-        self._underlying_to_surface = dict(inverse_base_map, **out_map)
+        self._surface_to_underlying = dict(**base_map, **in_map)
+        self._underlying_to_surface = dict(**inverse_base_map, **out_map)
 
         self._parse_pattern = re.compile(
             "$" + \
@@ -39,15 +40,12 @@ class Mapping(object):
             "|".join(sorted(list(self._underlying_to_surface.keys()), key=len, reverse=True)) + \
             "^")
 
-    def __unicode__(self):
+    def __str__(self):
         return (
-            "{}\n"
-            "---------------\n"
             "{}\n"
             "\n"
             "{}\n"
             .format(
-                str(self._name),
                 ",  ".join(" ".join(pair) for pair in self._surface_to_underlying.items()),
                 ",  ".join(" ".join(pair) for pair in self._underlying_to_surface.items()))
             )
