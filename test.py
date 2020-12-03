@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 
 import unittest
 
-from romajitools import *
+from romajitool import *
 
 
 class RTTestCase(unittest.TestCase):
@@ -15,7 +15,7 @@ class RTTestCase(unittest.TestCase):
         Check that the number of lemmas in master list is correct.
         """
         self.assertEqual(len(defs.LEMMAS), 153)
-    
+
     def test_format_lemma_coverage(self):
         """
         Check that for each format, all produced lemmas are in master list,
