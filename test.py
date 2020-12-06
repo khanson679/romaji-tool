@@ -29,13 +29,19 @@ class RTTestCase(unittest.TestCase):
                 self.assertIn(
                     lemma,
                     textformat.HIRAGANA.accepted_lemmas(),
-                    "Lemma '{}' not handled by format '{}'.".format(fmt.name, lemma))
+                    "Lemma '{}' not handled by format '{}'.".format(lemma, fmt.name))
 
     def test_hira_to_wapuro(self):
         # sanity test
         self.assertEqual(
             convert("ひらがな", in_fmt="hiragana", out_fmt="wapuro"),
             "hiragana")
+
+    def test_wapuro_to_hiragana(self):
+        # sanity test
+        self.assertEqual(
+            convert("hiragana", in_fmt="wapuro", out_fmt="hiragana"),
+            "ひらがな")
 
     def test_hira_to_kunrei(self):
         self.assertEqual(
