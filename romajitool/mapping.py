@@ -14,7 +14,7 @@ class Mapping(object):
         """
         base_map -- a dict containing a bidirectional mapping of surface:internal pairs
         in_map -- a dict containing a unidirectional mapping from surface to internal rep
-        out_map -- a dict containing a unidirectional mapping to surface from internal rep
+        out_map -- a dict containing a unidirectional mapping from internal to surface rep
 
         Contents of `in_map` and `out_map` override `base_map`.
         """
