@@ -12,7 +12,7 @@ class RTTestCase(unittest.TestCase):
         """
         Check that the number of lemmas in master list is correct.
         """
-        self.assertEqual(len(defs.LEMMAS), 153)
+        self.assertEqual(len(defs.LEMMAS_ALL), 153)
 
     def test_format_lemma_coverage(self):
         """
@@ -23,10 +23,10 @@ class RTTestCase(unittest.TestCase):
             for lemma in fmt.produced_lemmas():
                 self.assertIn(
                     lemma,
-                    defs.LEMMAS,
+                    defs.LEMMAS_ALL,
                     ("Lemma '{}' produced by format '{}'' not in master list."
                      .format(fmt.name, lemma)))
-            for lemma in defs.LEMMAS:
+            for lemma in defs.LEMMAS_ALL:
                 self.assertIn(
                     lemma,
                     textformat.HIRAGANA.accepted_lemmas(),

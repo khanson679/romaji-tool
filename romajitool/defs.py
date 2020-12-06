@@ -38,10 +38,12 @@ YA    YU    YO
 RA RI RU RE RO RYA RYU RYO
 WA          WO
 N'
+Q
+-
 """
 
-# lemmas for borrowed words, archaic spellings, etc.
-LEMMA_TAB_EXTENDED = """\
+# lemmas for borrowed words
+LEMMA_TAB_BORROWED = """\
     UXI       UXE UXO
 VA  VI   VU   VE  VO
               SYE
@@ -52,11 +54,15 @@ TSA TSI       TSE TSO
     DEXI DOXU
 FA  FI        FE  FO
               YE
+"""
+
+# lemmas for archaic kana
+LEMMA_TAB_ARCHAIC = """\
     WI        WE
 """
 
-# lemmas for Kana that are rarely used, for completeness
-LEMMA_TAB_EXTRA = """\
+# lemmas for rarely used kana
+LEMMA_TAB_RARE = """\
 UXA    UXU
                VYA VYU VYO
                DYA DYU DYO
@@ -65,11 +71,11 @@ UXA    UXU
 """
 
 # use to handle non-standard use of small kana
-LEMMA_TAB_SMALL_KANA_POST = "XA XI XU XE XO   XYA XYU XYO   XWA"
+LEMMA_TAB_SMALL_KANA = "XA XI XU XE XO   XYA XYU XYO   XWA"
 
 # special lemmas
-LEMMA_SOKUON = "Q"
-LEMMA_CHOUON = "-"
+# SOKUON = "Q"
+# CHOUON = "-"
 
 
 # ---------------------------------------------------------------------------
@@ -326,8 +332,10 @@ mm N'M
 #
 
 LEMMAS_BASIC = LEMMA_TAB_BASIC.split()
-LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
-LEMMAS_EXTRA = LEMMA_TAB_EXTRA.split()
-LEMMAS_SMALL_KANA_POST = LEMMA_TAB_SMALL_KANA_POST.split()
-LEMMAS = (LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA
-          + LEMMAS_SMALL_KANA_POST + [LEMMA_SOKUON, LEMMA_CHOUON])
+LEMMAS_BORROWED = LEMMA_TAB_BORROWED.split()
+LEMMAS_ARCHAIC = LEMMA_TAB_ARCHAIC.split()
+LEMMAS_RARE = LEMMA_TAB_RARE.split()
+LEMMAS_SMALL_KANA = LEMMA_TAB_SMALL_KANA.split()
+
+LEMMAS_STANDARD = LEMMAS_BASIC + LEMMAS_BORROWED
+LEMMAS_ALL = (LEMMAS_STANDARD + LEMMAS_ARCHAIC + LEMMAS_RARE + LEMMAS_SMALL_KANA)
