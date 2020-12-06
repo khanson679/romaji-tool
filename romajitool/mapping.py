@@ -25,16 +25,18 @@ class Mapping(object):
         if out_map is None:
             out_map = {}
 
-        inverse_base_map = {lemma:text for text, lemma in base_map.items()}
-        out_map = {lemma:text for text, lemma in out_map.items()}
+        inverse_base_map = {lemma: text for text, lemma in base_map.items()}
+        out_map = {lemma: text for text, lemma in out_map.items()}
 
         self._surface_to_underlying = dict(**base_map, **in_map)
         self._underlying_to_surface = dict(**inverse_base_map, **out_map)
 
         self._parse_pattern = re.compile(
-            "|".join(sorted(list(self._surface_to_underlying.keys()), key=len, reverse=True)))
+            "|".join(sorted(list(self._surface_to_underlying.keys()),
+                            key=len, reverse=True)))
         self._emit_pattern = re.compile(
-            "|".join(sorted(list(self._underlying_to_surface.keys()), key=len, reverse=True)))
+            "|".join(sorted(list(self._underlying_to_surface.keys()),
+                            key=len, reverse=True)))
 
     def __str__(self):
         return (
@@ -44,7 +46,7 @@ class Mapping(object):
             .format(
                 ",  ".join(" ".join(pair) for pair in self._surface_to_underlying.items()),
                 ",  ".join(" ".join(pair) for pair in self._underlying_to_surface.items()))
-            )
+        )
 
     def accepted_surface_substrings(self):
         """

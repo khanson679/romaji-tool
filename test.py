@@ -24,7 +24,8 @@ class RTTestCase(unittest.TestCase):
                 self.assertIn(
                     lemma,
                     defs.LEMMAS,
-                    "Lemma '{}' produced by format '{}'' not in master list.".format(fmt.name, lemma))
+                    ("Lemma '{}' produced by format '{}'' not in master list."
+                     .format(fmt.name, lemma)))
             for lemma in defs.LEMMAS:
                 self.assertIn(
                     lemma,

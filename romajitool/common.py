@@ -4,10 +4,10 @@ from . import defs
 from . import textformat
 
 
-FORMATS = {"hiragana" : textformat.HIRAGANA,
-           "wapuro"   : textformat.WAPURO,
-           "kunrei"   : textformat.KUNREI,
-           "hepburn"  : textformat.HEPBURN}
+FORMATS = {"hiragana": textformat.HIRAGANA,
+           "wapuro": textformat.WAPURO,
+           "kunrei": textformat.KUNREI,
+           "hepburn": textformat.HEPBURN}
 
 
 #
@@ -20,9 +20,9 @@ def convert(in_str, in_fmt, out_fmt, in_opts=None, out_opts=None):
     via an internal representation.
     """
 
-    if in_opts == None:
+    if in_opts is None:
         in_opts = []
-    if out_opts == None:
+    if out_opts is None:
         out_opts = []
 
     # load formats
