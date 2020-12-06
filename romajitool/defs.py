@@ -181,10 +181,7 @@ pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
 ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
 ya YA,        yu YU,        yo YO,
 ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
-wa WA,
-
-kwa KWA,
-gwa GWA
+wa WA
 """)
 
 MORAS_NIHON = util.read_table("""\
