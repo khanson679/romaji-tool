@@ -10,7 +10,7 @@ def read_table(tablestr):
 
     Split on commas (ignoring adjacent whitespace), then on spaces.
     """
-    entry_str_list = re.split("\s*,\s*", tablestr)
+    entry_str_list = re.split(r"\s*,\s*", tablestr)
     entry_dict = dict([entry.split() for entry in entry_str_list])
     return entry_dict
 
