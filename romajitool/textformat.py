@@ -96,7 +96,7 @@ class RomajiFormat(TextFormat):
                         self._sokuon_map,
                         self._nasal_map,
                         self._base_map):
-            out = mapping.parse(string)
+            out = mapping.parse(out)
         return out
 
     def emit(self, string):
@@ -108,7 +108,7 @@ class RomajiFormat(TextFormat):
                         self._nasal_map,
                         self._sokuon_map,
                         self._chouon_map):
-            out = mapping.emit(string)
+            out = mapping.emit(out)
         return out
 
 
@@ -116,20 +116,20 @@ class RomajiFormat(TextFormat):
 # init text formats
 #
 
-WAPURO   = TextFormat("Wapuro", mapping.Mapping())
 HIRAGANA = TextFormat("Hiragana", mapping.Mapping(defs.HIRAGANA_TAB))
+WAPURO   = TextFormat("Wapuro", mapping.Mapping(defs.ROMAJI_MORAS_BASE))
 NIHON    = RomajiFormat("Nihon",
                         mapping.Mapping(defs.MORAS_NIHON),
                         mapping.Mapping(defs.NASAL_BASE),
                         mapping.Mapping(defs.SOKUON_BASE),
                         mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
 KUNREI   = RomajiFormat("Kunrei",
-                        mapping.Mapping(defs.MORAS_KUNREI, None, defs.MORAS_KUNREI_OUTONLY),
+                        mapping.Mapping(defs.MORAS_KUNREI),
                         mapping.Mapping(defs.NASAL_BASE),
                         mapping.Mapping(defs.SOKUON_BASE),
                         mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
 HEPBURN  = RomajiFormat("Hepburn",
-                        mapping.Mapping(defs.MORAS_HEPBURN, None, defs.MORAS_HEPBURN_OUTONLY),
+                        mapping.Mapping(defs.MORAS_HEPBURN),
                         mapping.Mapping(defs.NASAL_BASE),
                         mapping.Mapping(defs.SOKUON_BASE),
                         mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
