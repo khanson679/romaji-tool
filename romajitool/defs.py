@@ -207,7 +207,7 @@ tya TYA, tyu TYU, tyo TYO
 """)
 
 MORAS_KUNREI_OUTONLY = util.read_table("""\
-zi DI, zu DU, zya DYA, dyu DYU, zyu DYO
+zi DI, zu DU, zya DYA, zyu DYU, zyu DYO
 """)
 
 MORAS_HEPBURN = util.read_table("""\
