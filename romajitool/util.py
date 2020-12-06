@@ -30,5 +30,6 @@ def join_maps_at_shared_char(prefixmap, suffixmap):
             if comb_surface is not None and comb_underlying is not None:
                 yield (comb_surface, comb_underlying)
 
+
 def join_at_shared_char(s1, s2):
     return "".join((s1[:-1], s2[1:])) if s1[-1] == s2[0] else None

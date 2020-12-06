@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+Definitions for mapping between kana/romaji and an internal representation.
+"""
+
 from . import util
 # from mapping import Mapping
 
-
-"""
-defs.py
-
-Definitions for mapping between kana/romaji and an internal representation.
-"""
 
 #----------------------------------------------------------------------------
 # Lemmas
@@ -327,9 +325,9 @@ mm N'M
 # init lemma data
 #
 
-LEMMAS_BASIC    = LEMMA_TAB_BASIC.split()
+LEMMAS_BASIC = LEMMA_TAB_BASIC.split()
 LEMMAS_EXTENDED = LEMMA_TAB_EXTENDED.split()
-LEMMAS_EXTRA    = LEMMA_TAB_EXTRA.split()
+LEMMAS_EXTRA = LEMMA_TAB_EXTRA.split()
 LEMMAS_SMALL_KANA_POST = LEMMA_TAB_SMALL_KANA_POST.split()
 LEMMAS = (LEMMAS_BASIC + LEMMAS_EXTENDED + LEMMAS_EXTRA +
-        LEMMAS_SMALL_KANA_POST + [LEMMA_SOKUON, LEMMA_CHOUON])
+          LEMMAS_SMALL_KANA_POST + [LEMMA_SOKUON, LEMMA_CHOUON])

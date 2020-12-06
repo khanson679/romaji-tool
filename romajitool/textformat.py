@@ -5,6 +5,7 @@ import re
 from . import defs
 from . import mapping
 
+
 class TextFormat(object):
     """
     Defines mapping from a Kana or romanization format to the internal representation.
