@@ -32,13 +32,9 @@ class Mapping(object):
         self._underlying_to_surface = dict(**inverse_base_map, **out_map)
 
         self._parse_pattern = re.compile(
-            "$" + \
-            "|".join(sorted(list(self._surface_to_underlying.keys()), key=len, reverse=True)) + \
-            "^")
+            "|".join(sorted(list(self._surface_to_underlying.keys()), key=len, reverse=True)))
         self._emit_pattern = re.compile(
-            "$" + \
-            "|".join(sorted(list(self._underlying_to_surface.keys()), key=len, reverse=True)) + \
-            "^")
+            "|".join(sorted(list(self._underlying_to_surface.keys()), key=len, reverse=True)))
 
     def __str__(self):
         return (
