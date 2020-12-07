@@ -33,11 +33,11 @@ class TextFormat(object):
     def name(self):
         return self._name
 
-    def accepted_lemmas(self):
-        return self._mapping.accepted_internal_substrings()
+    def inputtable_lemmas(self):
+        return self._mapping.inputtable_lemmas()
 
-    def produced_lemmas(self):
-        return self._mapping.produced_internal_substrings()
+    def outputtable_lemmas(self):
+        return self._mapping.outputtable_lemmas()
 
     def parse(self, string):
         """
@@ -86,11 +86,11 @@ class RomajiFormat(TextFormat):
             .format(str(self._name), str(self._base_map))
         )
 
-    def accepted_lemmas(self):
-        return self._base_map.accepted_internal_substrings()
+    def inputtable_lemmas(self):
+        return self._base_map.inputtable_lemmas()
 
-    def produced_lemmas(self):
-        return self._base_map.produced_internal_substrings()
+    def outputtable_lemmas(self):
+        return self._base_map.outputtable_lemmas()
 
     def parse(self, string):
         """

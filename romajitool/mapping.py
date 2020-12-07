@@ -58,29 +58,29 @@ class Mapping(object):
                 ",  ".join(" ".join(pair) for pair in self._underlying_to_surface.items()))
         )
 
-    def accepted_surface_substrings(self):
+    def inputtable_lemmas(self):
         """
-        Returns iterator over list of keys in mapping from format to internal rep.
+        Returns iterator over list of values in mapping from surface to internal rep.
         """
-        return self._surface_to_underlying.keys()
+        return self._surface_to_underlying.values()
 
-    def accepted_internal_substrings(self):
+    def outputtable_lemmas(self):
         """
         Returns iterator over list of keys in mapping to format from internal rep.
         """
         return self._underlying_to_surface.keys()
 
-    def produced_surface_substrings(self):
+    def accepted_substrings(self):
+        """
+        Returns iterator over list of keys in mapping from format to internal rep.
+        """
+        return self._surface_to_underlying.keys()
+
+    def produced_substrings(self):
         """
         Returns iterator over list of values in mapping to surface from internal rep.
         """
         return self._underlying_to_surface.values()
-
-    def produced_internal_substrings(self):
-        """
-        Returns iterator over list of values in mapping from surface to internal rep.
-        """
-        return self._surface_to_underlying.values()
 
     def match_surface(self, string):
         """

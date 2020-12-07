@@ -20,7 +20,7 @@ class RTTestCase(unittest.TestCase):
           lemmas in master list are converted to format.
         """
         for fmt in FORMATS.values():
-            for lemma in fmt.produced_lemmas():
+            for lemma in fmt.outputtable_lemmas():
                 self.assertIn(
                     lemma,
                     defs.LEMMAS_ALL,
@@ -29,7 +29,7 @@ class RTTestCase(unittest.TestCase):
             for lemma in defs.LEMMAS_ALL:
                 self.assertIn(
                     lemma,
-                    defs.HIRAGANA.accepted_lemmas(),
+                    defs.HIRAGANA.inputtable_lemmas(),
                     "Lemma '{}' not handled by format '{}'.".format(lemma, fmt.name))
 
     def test_hira_to_roma(self):
