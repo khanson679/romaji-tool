@@ -6,7 +6,7 @@ from . import defs
 
 FORMATS = {"hiragana": defs.HIRAGANA,
            "wapuro": defs.WAPURO,
-           "wapuro": defs.NIHON,
+           "nihon": defs.NIHON,
            "kunrei": defs.KUNREI,
            "hepburn-strict": defs.HEPBURN_STRICT,
            "hepburn": defs.HEPBURN}

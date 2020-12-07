@@ -32,38 +32,45 @@ class RTTestCase(unittest.TestCase):
                     defs.HIRAGANA.accepted_lemmas(),
                     "Lemma '{}' not handled by format '{}'.".format(lemma, fmt.name))
 
-    def test_hira_to_wapuro(self):
+    def test_hira_to_roma(self):
         # sanity test
         self.assertEqual(
-            convert("ひらがな", in_fmt="hiragana", out_fmt="wapuro"),
+            convert("ひらがな", in_fmt="hiragana", out_fmt="nihon"),
             "hiragana")
 
-    def test_wapuro_to_hiragana(self):
+    def test_roma_to_hiragana(self):
         # sanity test
         self.assertEqual(
-            convert("hiragana", in_fmt="wapuro", out_fmt="hiragana"),
+            convert("hiragana", in_fmt="nihon", out_fmt="hiragana"),
             "ひらがな")
 
-    def test_hira_to_kunrei(self):
+    def test_kunrei_consonants(self):
         self.assertEqual(
             convert("しち", in_fmt="hiragana", out_fmt="kunrei"),
             "siti")
-
-    def test_kunrei_to_hira(self):
         self.assertEqual(
             convert("siti", in_fmt="kunrei", out_fmt="hiragana"),
             "しち")
 
-    def test_hira_to_hepburn(self):
+    def test_hepburn_consonants(self):
         self.assertEqual(
             convert("しち", in_fmt="hiragana", out_fmt="hepburn"),
             "shichi")
-
-    def test_hepburn_to_hira_(self):
         self.assertEqual(
             convert("shichi", in_fmt="hepburn", out_fmt="hiragana"),
             "しち")
 
+    def test_nasal_before_vowel(self):
+        self.assertEqual(
+            convert("ぜんいん", in_fmt="hiragana", out_fmt="hepburn"),
+            "zen'in")
+        self.assertEqual(
+            convert("とんかつ", in_fmt="hiragana", out_fmt="hepburn"),
+            "tonkatsu")
+
 
 if __name__ == '__main__':
     unittest.main()
+    # (convert("ぜんいん", in_fmt="hiragana", out_fmt="hepburn"))
+    # (convert("zen'in", in_fmt="hepburn", out_fmt="hiragana"))
+    # (convert("hiragana", in_fmt="wapuro", out_fmt="hiragana"))

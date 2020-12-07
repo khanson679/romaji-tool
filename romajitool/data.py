@@ -169,7 +169,8 @@ pa PA, pi PI, pu PU, pe PE, po PO, pya PYA, pyu PYU, pyo PYO,
 ma MA, mi MI, mu MU, me ME, mo MO, mya MYA, myu MYU, myo MYO,
 ya YA,        yu YU,        yo YO,
 ra RA, ri RI, ru RU, re RE, ro RO, rya RYA, ryu RYU, ryo RYO,
-wa WA
+wa WA,
+n' N'
 """
 
 NIHON_TAB = """\
@@ -292,38 +293,39 @@ ee E-,
 oo O-
 """
 
-NASAL_BASE = """\
-n'a N'A,
-n'i N'A,
-n'u N'A,
-n'e N'A,
-n'o N'A,
-nk  N'K,
-ng  N'G,
-ns  N'S,
-nz  N'Z,
-nt  N'T,
-nd  N'D,
-nn  N'N,
-nh  N'H,
-nm  N'M,
-n'y N'Y,
-nr  N'R,
-nw  N'W
-"""
+# NASAL_BASE = """\
+# n'a N'A,
+# n'i N'I,
+# n'u N'U,
+# n'e N'E,
+# n'o N'U,
+# nk  N'K,
+# ng  N'G,
+# ns  N'S,
+# nz  N'Z,
+# nt  N'T,
+# nd  N'D,
+# nn  N'N,
+# nh  N'H,
+# nm  N'M,
+# n'y N'Y,
+# nr  N'R,
+# nw  N'W,
+# n   N'
+# """
 
 # NASAL_HEPBURN = """\
 # nch n'CH
 # nj N'J
 # """
 
-NASAL_EXTENDED = """\
-nf N'F,
-nv N'V
-"""
+# NASAL_EXTENDED = """\
+# nf N'F,
+# nv N'V
+# """
 
-NASAL_ALTERNATE = """\
-mp N'P,
-mb N'B,
-mm N'M
-"""
+# NASAL_ALTERNATE = """\
+# mp N'P,
+# mb N'B,
+# mm N'M
+# """

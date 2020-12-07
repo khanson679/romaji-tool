@@ -39,10 +39,14 @@ class Mapping(object):
 
         self._parse_pattern = re.compile(
             "|".join(sorted(list(self._surface_to_underlying.keys()),
-                            key=len, reverse=True)))
+                            key=len,
+                            reverse=True)),
+            flags=re.IGNORECASE)
         self._emit_pattern = re.compile(
             "|".join(sorted(list(self._underlying_to_surface.keys()),
-                            key=len, reverse=True)))
+                            key=len,
+                            reverse=True)),
+            flags=re.IGNORECASE)
 
     def __str__(self):
         return (
@@ -97,7 +101,7 @@ class Mapping(object):
         Return a string (partially) converted to the internal representation.
         """
         return re.sub(pattern=self._parse_pattern,
-                      repl=lambda x: self._surface_to_underlying[x.group(0)],
+                      repl=lambda x: self._surface_to_underlying[x.group(0).lower()],
                       string=string)
 
     def emit(self, string):
@@ -105,5 +109,24 @@ class Mapping(object):
         Return a string (partially) converted to surface representation.
         """
         return re.sub(pattern=self._emit_pattern,
-                      repl=lambda x: self._underlying_to_surface[x.group(0)],
+                      repl=lambda x: self._underlying_to_surface[x.group(0).upper()],
                       string=string)
+
+
+class ContextualMapping(object):
+
+    def __init__(self, surface, underlying, context):
+        self._surface = surface
+        self._underlying = underlying
+        self._context = context
+
+        self._parse_pattern = re.compile("{}(?={})".format(surface, context),
+                                         flags=re.I)
+        self._emit_pattern = re.compile("{}(?={})".format(underlying, context),
+                                        flags=re.I)
+
+    def parse(self, string):
+        return re.sub(self._parse_pattern, self._underlying, string)
+
+    def emit(self, string):
+        return re.sub(self._emit_pattern, self._surface, string)

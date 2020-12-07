@@ -8,7 +8,7 @@ Definitions for mapping between kana/romaji and an internal representation.
 
 from . import util
 from . import data
-from .mapping import Mapping
+from .mapping import Mapping, ContextualMapping
 from .textformat import TextFormat, RomajiFormat
 
 
@@ -56,9 +56,12 @@ CHOUON_MAP_MACRON = util.read_table(data.CHOUON_MACRON)
 CHOUON_MAP_CIRCUMFLEX = util.read_table(data.CHOUON_CIRCUMFLEX)
 CHOUON_MAP_DOUBLE_VOWEL = util.read_table(data.CHOUON_DOUBLE_VOWEL)
 
-NASAL_MAP_BASE = util.read_table(data.NASAL_BASE)
-NASAL_MAP_EXTENDED = util.read_table(data.NASAL_EXTENDED)
-NASA_MAP_ALTERNATE = util.read_table(data.NASAL_ALTERNATE)
+# NASAL_MAP_BASE = util.read_table(data.NASAL_BASE)
+# NASAL_MAP_EXTENDED = util.read_table(data.NASAL_EXTENDED)
+# NASA_MAP_ALTERNATE = util.read_table(data.NASAL_ALTERNATE)
+
+NASAL_MAP_N = ContextualMapping("n", "N'", "[KGSZRDNHRW]|$")
+NASAL_MAP_M = ContextualMapping("m", "N'", "[BPM]|$")
 
 
 #
@@ -72,21 +75,21 @@ WAPURO = TextFormat("Wapuro", Mapping(ROMAJI_MAP_BASE))
 NIHON = RomajiFormat(
     "Nihon",
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_NIHON),
-    Mapping(NASAL_MAP_BASE),
+    NASAL_MAP_N,
     Mapping(SOKUON_MAP_BASE),
     Mapping(CHOUON_MAP_CIRCUMFLEX))
 
 KUNREI = RomajiFormat(
     "Kunrei",
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_KUNREI),
-    Mapping(NASAL_MAP_BASE),
+    NASAL_MAP_N,
     Mapping(SOKUON_MAP_BASE),
     Mapping(CHOUON_MAP_CIRCUMFLEX))
 
 HEPBURN_STRICT = RomajiFormat(
     "Hepburn",
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_HEPBURN + ROMAJI_MAP_HEPBURN_OUTONLY),
-    Mapping(NASAL_MAP_BASE),
+    NASAL_MAP_N,
     Mapping(SOKUON_MAP_BASE + SOKUON_MAP_HEPBURN),
     Mapping(CHOUON_MAP_MACRON))
 
@@ -95,6 +98,6 @@ HEPBURN = RomajiFormat(
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_HEPBURN + ROMAJI_MAP_HEPBURN_OUTONLY
             + ROMAJI_MAP_HEPBURN_EXTENDED + ROMAJI_MAP_HEPBURN_EXTRA
             + ROMAJI_MAP_HEPBURN_EXTRA_OUTONLY),
-    Mapping(NASAL_MAP_BASE + NASAL_MAP_EXTENDED),
+    NASAL_MAP_N,
     Mapping(SOKUON_MAP_BASE + SOKUON_MAP_HEPBURN + SOKUON_MAP_HEPBURN_EXTENDED),
     Mapping(CHOUON_MAP_MACRON))

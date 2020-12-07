@@ -40,13 +40,15 @@ class TextFormat(object):
         """
         Return a string converted to the internal representation.
         """
-        return self._mapping.parse(string)
+        out = self._mapping.parse(string)
+        return out
 
     def emit(self, string):
         """
         Return a string converted to this format.
         """
-        return self._mapping.emit(string)
+        out = self._mapping.emit(string)
+        return out
 
 
 class RomajiFormat(TextFormat):
