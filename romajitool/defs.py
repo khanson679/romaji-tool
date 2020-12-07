@@ -87,7 +87,7 @@ KUNREI = RomajiFormat(
     Mapping(CHOUON_MAP_CIRCUMFLEX))
 
 HEPBURN_STRICT = RomajiFormat(
-    "Hepburn",
+    "Hepburn Strict",
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_HEPBURN + ROMAJI_MAP_HEPBURN_OUTONLY),
     NASAL_MAP_N,
     Mapping(SOKUON_MAP_BASE + SOKUON_MAP_HEPBURN),
