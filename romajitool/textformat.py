@@ -19,11 +19,14 @@ class TextFormat(object):
         self._mapping = mapping
 
     def __str__(self):
+        return self._name
+
+    def pformat(self):
         return (
             "{}\n"
             "---------------\n"
             "{}\n"
-            .format(str(self._name), str(self._mapping))
+            .format(self._name, self._mapping.pformat)
         )
 
     @property

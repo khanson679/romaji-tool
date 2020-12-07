@@ -48,7 +48,7 @@ class Mapping(object):
                             reverse=True)),
             flags=re.IGNORECASE)
 
-    def __str__(self):
+    def pformat(self):
         return (
             "{}\n"
             "\n"
