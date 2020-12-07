@@ -62,25 +62,25 @@ class Mapping(object):
         """
         Returns iterator over list of keys in mapping from format to internal rep.
         """
-        return iter(self._surface_to_underlying.keys())
+        return self._surface_to_underlying.keys()
 
     def accepted_internal_substrings(self):
         """
         Returns iterator over list of keys in mapping to format from internal rep.
         """
-        return iter(self._underlying_to_surface.keys())
+        return self._underlying_to_surface.keys()
 
     def produced_surface_substrings(self):
         """
         Returns iterator over list of values in mapping to surface from internal rep.
         """
-        return iter(self._underlying_to_surface.values())
+        return self._underlying_to_surface.values()
 
     def produced_internal_substrings(self):
         """
         Returns iterator over list of values in mapping from surface to internal rep.
         """
-        return iter(self._surface_to_underlying.values())
+        return self._surface_to_underlying.values()
 
     def match_surface(self, string):
         """
