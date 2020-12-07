@@ -3,5 +3,4 @@
 *.sublime-project
 *.sublime-workspace
 
-experiments.py
-scratchpad.txt
+*.directory
