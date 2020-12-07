@@ -29,7 +29,7 @@ class RTTestCase(unittest.TestCase):
             for lemma in defs.LEMMAS_ALL:
                 self.assertIn(
                     lemma,
-                    textformat.HIRAGANA.accepted_lemmas(),
+                    defs.HIRAGANA.accepted_lemmas(),
                     "Lemma '{}' not handled by format '{}'.".format(lemma, fmt.name))
 
     def test_hira_to_wapuro(self):

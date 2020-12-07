@@ -19,13 +19,20 @@ class Mapping(object):
         """
         if base_map is None:
             base_map = {}
+        else:
+            base_map = dict(base_map)
+
         if in_map is None:
             in_map = {}
+        else:
+            in_map = dict(in_map)
+
         if out_map is None:
             out_map = {}
+        else:
+            out_map = [(lemma, text) for text, lemma in out_map]
 
         inverse_base_map = {lemma: text for text, lemma in base_map.items()}
-        out_map = {lemma: text for text, lemma in out_map.items()}
 
         self._surface_to_underlying = dict(**base_map, **in_map)
         self._underlying_to_surface = dict(**inverse_base_map, **out_map)

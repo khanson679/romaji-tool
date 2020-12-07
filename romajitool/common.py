@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
 from . import defs
-from . import textformat
+# from . import textformat
 
 
-FORMATS = {"hiragana": textformat.HIRAGANA,
-           "wapuro": textformat.WAPURO,
-           "kunrei": textformat.KUNREI,
-           "hepburn": textformat.HEPBURN}
+FORMATS = {"hiragana": defs.HIRAGANA,
+           "wapuro": defs.WAPURO,
+           "wapuro": defs.NIHON,
+           "kunrei": defs.KUNREI,
+           "hepburn-strict": defs.HEPBURN_STRICT,
+           "hepburn": defs.HEPBURN}
 
 
 #

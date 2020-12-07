@@ -1,8 +1,8 @@
 
-import re
+# import re
 
-from . import defs
-from . import mapping
+# from . import defs
+# from . import mapping
 
 
 class TextFormat(object):
@@ -110,26 +110,3 @@ class RomajiFormat(TextFormat):
                         self._chouon_map):
             out = mapping.emit(out)
         return out
-
-
-#
-# init text formats
-#
-
-HIRAGANA = TextFormat("Hiragana", mapping.Mapping(defs.HIRAGANA_TAB))
-WAPURO   = TextFormat("Wapuro", mapping.Mapping(defs.ROMAJI_MORAS_BASE))
-NIHON    = RomajiFormat("Nihon",
-                        mapping.Mapping(defs.MORAS_NIHON),
-                        mapping.Mapping(defs.NASAL_BASE),
-                        mapping.Mapping(defs.SOKUON_BASE),
-                        mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
-KUNREI   = RomajiFormat("Kunrei",
-                        mapping.Mapping(defs.MORAS_KUNREI),
-                        mapping.Mapping(defs.NASAL_BASE),
-                        mapping.Mapping(defs.SOKUON_BASE),
-                        mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
-HEPBURN  = RomajiFormat("Hepburn",
-                        mapping.Mapping(defs.MORAS_HEPBURN),
-                        mapping.Mapping(defs.NASAL_BASE),
-                        mapping.Mapping(defs.SOKUON_BASE),
-                        mapping.Mapping(defs.CHOUON_DOUBLE_VOWEL))
