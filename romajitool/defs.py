@@ -70,7 +70,7 @@ NASAL_MAP_M = ContextualMapping("m", "N'", "[BPM]|$")
 
 HIRAGANA = TextFormat("Hiragana", Mapping(HIRAGANA_MAP))
 
-WAPURO = TextFormat("Wapuro", Mapping(ROMAJI_MAP_BASE))
+# WAPURO = TextFormat("Wapuro", Mapping())
 
 NIHON = RomajiFormat(
     "Nihon",
