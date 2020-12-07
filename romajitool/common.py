@@ -32,12 +32,12 @@ def convert(in_str, in_fmt, out_fmt, in_opts=None, out_opts=None):
         in_format = FORMATS[in_fmt]
     except KeyError:
         raise ValueError("in_fmt must be one of: {}."
-                         " Got '{}' instead.".format(FORMATS, in_fmt))
+                         " Got '{}' instead.".format(FORMATS.keys(), in_fmt))
     try:
         out_format = FORMATS[out_fmt]
     except KeyError:
         raise ValueError("out_fmt must be one of: {}."
-                         " Got '{}' instead.".format(FORMATS, out_fmt))
+                         " Got '{}' instead.".format(FORMATS.keys(), out_fmt))
 
     # map to output format
     intermediate = in_format.parse(in_str)
