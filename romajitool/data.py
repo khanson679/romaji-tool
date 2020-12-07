@@ -218,7 +218,7 @@ ji DI, zu DU, ja DYA, ju DYU, jo DYO
 
 ROMAJI_TAB_HEPBURN_EXTENDED = """\
          wi  UXI,           we  UXE, wo   UXO,
-va  VA,  vi  VI,   vu U,    ve  VE,  vo   VO,
+va  VA,  vi  VI,   vu VU,   ve  VE,  vo   VO,
                             she SYE,
                             je  ZYE,
          ti  TEXI, tu TOXU,
