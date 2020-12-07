@@ -60,8 +60,9 @@ CHOUON_MAP_DOUBLE_VOWEL = util.read_table(data.CHOUON_DOUBLE_VOWEL)
 # NASAL_MAP_EXTENDED = util.read_table(data.NASAL_EXTENDED)
 # NASA_MAP_ALTERNATE = util.read_table(data.NASAL_ALTERNATE)
 
-NASAL_MAP_N = ContextualMapping("n", "N'", "[KGSZRDNHRW]|$")
-NASAL_MAP_M = ContextualMapping("m", "N'", "[BPM]|$")
+NASAL_MAP_DEFAULT = ContextualMapping("n", "N'", "[KGSZRDNHBPMRW]|$")
+NASAL_MAP_MOD_HEP_N = ContextualMapping("n", "N'", "[KGSZRDNHRW]|$")
+NASAL_MAP_MOD_HEP_M = ContextualMapping("m", "N'", "[BPM]|$")
 
 
 #
@@ -75,21 +76,21 @@ HIRAGANA = TextFormat("Hiragana", Mapping(HIRAGANA_MAP))
 NIHON = RomajiFormat(
     "Nihon",
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_NIHON),
-    NASAL_MAP_N,
+    NASAL_MAP_DEFAULT,
     Mapping(SOKUON_MAP_BASE),
     Mapping(CHOUON_MAP_CIRCUMFLEX))
 
 KUNREI = RomajiFormat(
     "Kunrei",
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_KUNREI),
-    NASAL_MAP_N,
+    NASAL_MAP_DEFAULT,
     Mapping(SOKUON_MAP_BASE),
     Mapping(CHOUON_MAP_CIRCUMFLEX))
 
 HEPBURN_STRICT = RomajiFormat(
     "Hepburn Strict",
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_HEPBURN + ROMAJI_MAP_HEPBURN_OUTONLY),
-    NASAL_MAP_N,
+    NASAL_MAP_DEFAULT,
     Mapping(SOKUON_MAP_BASE + SOKUON_MAP_HEPBURN),
     Mapping(CHOUON_MAP_MACRON))
 
@@ -98,6 +99,6 @@ HEPBURN = RomajiFormat(
     Mapping(ROMAJI_MAP_BASE + ROMAJI_MAP_HEPBURN + ROMAJI_MAP_HEPBURN_OUTONLY
             + ROMAJI_MAP_HEPBURN_EXTENDED + ROMAJI_MAP_HEPBURN_EXTRA
             + ROMAJI_MAP_HEPBURN_EXTRA_OUTONLY),
-    NASAL_MAP_N,
+    NASAL_MAP_DEFAULT,
     Mapping(SOKUON_MAP_BASE + SOKUON_MAP_HEPBURN + SOKUON_MAP_HEPBURN_EXTENDED),
     Mapping(CHOUON_MAP_MACRON))
