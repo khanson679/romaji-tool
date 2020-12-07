@@ -113,6 +113,42 @@ HIRAGANA_TAB = """\
 ー -
 """
 
+KATAKANA_TAB = """\
+ア A,  イ I,  ウ U,  エ E,  オ O,
+カ KA, キ KI, ク KU, ケ KE, コ KO, キャ KYA, キュ KYU, キョ KYO,
+ガ GA, ギ GI, グ GU, ゲ GE, ゴ GO, ギャ GYA, ギュ GYU, ギョ GYO,
+サ SA, シ SI, ス SU, セ SE, ソ SO, シャ SYA, シュ SYU, ショ SYO,
+ザ ZA, ジ ZI, ズ ZU, ゼ ZE, ゾ ZO, ジャ ZYA, ジュ ZYU, ジョ ZYO,
+タ TA, チ TI, ツ TU, テ TE, ト TO, チャ TYA, チュ TYU, チョ TYO,
+ダ DA, ヂ DI, ヅ DU, デ DE, ド DO,
+ナ NA, ニ NI, ヌ NU, ネ NE, ノ NO, ニャ NYA, ニュ NYU, ニョ NYO,
+ハ HA, ヒ HI, フ HU, ヘ HE, ホ HO, ヒャ HYA, ヒュ HYU, ヒョ HYO,
+バ BA, ビ BI, ブ BU, ベ BE, ボ BO, ビャ BYA, ビュ BYU, ビョ BYO,
+パ PA, ピ PI, プ PU, ペ PE, ポ PO, ピャ PYA, ピュ PYU, ピョ PYO,
+マ MA, ミ MI, ム MU, メ ME, モ MO, ミャ MYA, ミュ MYU, ミョ MYO,
+ヤ YA,        ユ YU,       ヨ YO,
+ラ RA, リ RI, ル RU, レ RE, ロ RO, リャ RYA, リュ RYU, リョ RYO,
+ワ WA,                     ヲ WO,
+ン N',
+
+ウァ UXA, ウィ UXI,  ウゥ UXU,  ウェ UXE, ウォ UXO,
+ゔァ VA,  ゔィ VI,   ゔ   VU,   ゔェ VE,  ゔォ VO,  ゔャ VYA, ゔュ VYU, ゔョ VYO,
+                              シェ SYE,
+                              ジェ ZYE,
+         ティ TEXI, トゥ TOXU,
+                              チェ TYE,
+ツァ TSA, ツィ TSI,  ツェ TSE,           ツォ TSO,
+         ディ DEXI, ドゥ DOXU,                    ヂャ DYA, ヂュ DYU, ヂョ DYO,
+ファ FA,  フィ FI,             フェ FE,  フォ FO,  フャ FYA, フュ FYU, フョ FYO,
+         イィ YI,             イェ YE,
+         ヰ WI,               ヱ WE,
+
+ァ XA, ィ XI, ゥ XU, ェ XE, ォ XO, ャ XYA, ュ XYU, ョ XYO, ヮ XWA,
+
+ッ Q,
+ー -
+"""
+
 
 # ---------------------------------------------------------------------------
 # Romaji conversion tables

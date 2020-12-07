@@ -36,8 +36,9 @@ LEMMAS_ALL = LEMMAS_STANDARD + LEMMAS_ARCHAIC + LEMMAS_RARE + LEMMAS_SMALL_KANA
 #
 
 HIRAGANA_MAP = util.read_table(data.HIRAGANA_TAB)
+KATAKANA_MAP = util.read_table(data.KATAKANA_TAB)
 
-ROMAJI_MAP_BASE = util.read_table(data.ROMAJI_TAB_BASE)
+# ROMAJI_MAP_BASE = util.read_table(data.ROMAJI_TAB_BASE)
 ROMAJI_MAP_NIHON = util.read_table(data.NIHON_TAB)
 ROMAJI_MAP_KUNREI = util.read_table(data.KUNREI_TAB)
 ROMAJI_MAP_KUNREI_OUTONLY = util.read_table(data.KUNREI_TAB_OUTONLY)
@@ -70,6 +71,7 @@ NASAL_MAP_MOD_HEP_M = ContextualMapping("m", "N'", "[BPM]|$")
 #
 
 HIRAGANA = TextFormat("Hiragana", Mapping(HIRAGANA_MAP))
+KATAKANA = TextFormat("Hiragana", Mapping(KATAKANA_MAP))
 
 # WAPURO = TextFormat("Wapuro", Mapping())
 

@@ -35,14 +35,23 @@ class RTTestCase(unittest.TestCase):
     def test_hira_to_roma(self):
         # sanity test
         self.assertEqual(
-            convert("ひらがな", in_fmt="hiragana", out_fmt="nihon"),
-            "hiragana")
+            convert("いちご", in_fmt="hiragana", out_fmt="nihon"),
+            "itigo")
 
     def test_roma_to_hiragana(self):
         # sanity test
         self.assertEqual(
-            convert("hiragana", in_fmt="nihon", out_fmt="hiragana"),
-            "ひらがな")
+            convert("itigo", in_fmt="nihon", out_fmt="hiragana"),
+            "いちご")
+
+    def test_katakana(self):
+        self.assertEqual(
+            convert("バナナ", in_fmt="katakana", out_fmt="nihon"),
+            "banana")
+        self.assertEqual(
+            convert("banana", in_fmt="nihon", out_fmt="katakana"),
+            "バナナ")
+
 
     def test_kunrei_consonants(self):
         self.assertEqual(
