@@ -51,6 +51,12 @@ class RTTestCase(unittest.TestCase):
         self.assertEqual(
             convert("siti", in_fmt="kunrei", out_fmt="hiragana"),
             "しち")
+        self.assertEqual(
+            convert("はなぢ", in_fmt="hiragana", out_fmt="kunrei"),
+            "hanazi")
+        self.assertNotEqual(
+            convert("hanazi", in_fmt="kunrei", out_fmt="hiragana"),
+            "はなぢ")
 
     def test_hepburn_consonants(self):
         self.assertEqual(
@@ -59,6 +65,12 @@ class RTTestCase(unittest.TestCase):
         self.assertEqual(
             convert("shichi", in_fmt="hepburn", out_fmt="hiragana"),
             "しち")
+        self.assertEqual(
+            convert("はなぢ", in_fmt="hiragana", out_fmt="hepburn"),
+            "hanaji")
+        self.assertNotEqual(
+            convert("hanaji", in_fmt="hepburn", out_fmt="hiragana"),
+            "はなぢ")
 
     def test_nasal_before_vowel(self):
         self.assertEqual(

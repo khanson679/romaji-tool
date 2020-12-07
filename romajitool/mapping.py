@@ -30,7 +30,7 @@ class Mapping(object):
         if out_map is None:
             out_map = {}
         else:
-            out_map = [(lemma, text) for text, lemma in out_map]
+            out_map = {lemma: text for text, lemma in out_map}
 
         inverse_base_map = {lemma: text for text, lemma in base_map.items()}
 
