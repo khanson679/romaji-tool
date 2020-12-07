@@ -52,7 +52,6 @@ class RTTestCase(unittest.TestCase):
             convert("banana", in_fmt="nihon", out_fmt="katakana"),
             "バナナ")
 
-
     def test_kunrei_consonants(self):
         self.assertEqual(
             convert("しち", in_fmt="hiragana", out_fmt="kunrei"),
