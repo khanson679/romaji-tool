@@ -62,9 +62,9 @@ class RTTestCase(unittest.TestCase):
         self.assertEqual(
             convert("はなぢ", in_fmt="hiragana", out_fmt="kunrei"),
             "hanazi")
-        self.assertNotEqual(
+        self.assertEqual(
             convert("hanazi", in_fmt="kunrei", out_fmt="hiragana"),
-            "はなぢ")
+            "はなじ")
 
     def test_hepburn_consonants(self):
         self.assertEqual(
@@ -76,11 +76,11 @@ class RTTestCase(unittest.TestCase):
         self.assertEqual(
             convert("はなぢ", in_fmt="hiragana", out_fmt="hepburn"),
             "hanaji")
-        self.assertNotEqual(
+        self.assertEqual(
             convert("hanaji", in_fmt="hepburn", out_fmt="hiragana"),
-            "はなぢ")
+            "はなじ")
 
-    def test_nasal_before_vowel(self):
+    def test_nasal(self):
         self.assertEqual(
             convert("ぜんいん", in_fmt="hiragana", out_fmt="hepburn"),
             "zen'in")
@@ -88,9 +88,20 @@ class RTTestCase(unittest.TestCase):
             convert("とんかつ", in_fmt="hiragana", out_fmt="hepburn"),
             "tonkatsu")
 
+    def test_sokuon(self):
+        self.assertEqual(
+            convert("きって", in_fmt="hiragana", out_fmt="hepburn"),
+            "kitte")
+        self.assertEqual(
+            convert("kitte", in_fmt="hepburn", out_fmt="hiragana"),
+            "きって")
+        self.assertEqual(
+            convert("さっそく", in_fmt="hiragana", out_fmt="hepburn"),
+            "sassoku")
+        self.assertEqual(
+            convert("sassoku", in_fmt="hepburn", out_fmt="hiragana"),
+            "さっそく")
+
 
 if __name__ == '__main__':
     unittest.main()
-    # (convert("ぜんいん", in_fmt="hiragana", out_fmt="hepburn"))
-    # (convert("zen'in", in_fmt="hepburn", out_fmt="hiragana"))
-    # (convert("hiragana", in_fmt="wapuro", out_fmt="hiragana"))
