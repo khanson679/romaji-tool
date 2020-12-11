@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 Definitions for mapping between kana/romaji and an internal representation.
 """
@@ -33,6 +30,9 @@ LEMMAS_ALL = LEMMAS_STANDARD + LEMMAS_ARCHAIC + LEMMAS_RARE + LEMMAS_SMALL_KANA
 
 #
 # Mappings
+#
+# Parsed data defining partial mappings. Used to construct objects that
+# handle the actual conversion.
 #
 
 HIRAGANA_MAP = util.read_table(data.HIRAGANA_TAB)
@@ -68,6 +68,8 @@ NASAL_MAP_MOD_HEP_M = ContextualMapping("m", "N'", "[BPM]|$")
 
 #
 # Text Formats
+#
+# Objects that handle actual conversion.
 #
 
 HIRAGANA = TextFormat("Hiragana", Mapping(HIRAGANA_MAP))

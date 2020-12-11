@@ -1,19 +1,20 @@
-
-# import re
-
-# from . import defs
-# from . import mapping
+"""
+Classes to organize mapping data into a user-friendly format.
+"""
 
 
 class TextFormat(object):
     """
-    Defines mapping from a Kana or romanization format to the internal representation.
+    Defines mapping between a text format and the internal representation.
+
+    This class is used for simple cases. More difficult cases are handled
+    by subclasses.
     """
 
     def __init__(self, name, mapping):
         """
         name    -- the name of the format
-        mapping -- a mapping from this format to the underlying representation
+        mapping -- a mapping between this format and internal representation
         """
         self._name = name
         self._mapping = mapping
@@ -34,9 +35,15 @@ class TextFormat(object):
         return self._name
 
     def inputtable_lemmas(self):
+        """
+        Returns view of values in mapping from surface to internal rep.
+        """
         return self._mapping.inputtable_lemmas()
 
     def outputtable_lemmas(self):
+        """
+        Returns view of keys in mapping to format from internal rep.
+        """
         return self._mapping.outputtable_lemmas()
 
     def parse(self, string):
@@ -56,9 +63,9 @@ class TextFormat(object):
 
 class RomajiFormat(TextFormat):
     """
-    Defines a mapping from a romanization format to the internal representation.
+    Defines a mapping between a romanization format and the internal representation.
 
-    Handles sokuon, etc.
+    Combines several individual mappings to handle sokuon, etc.
     """
 
     def __init__(self, name, base, nasal, sokuon, chouon):
@@ -79,17 +86,21 @@ class RomajiFormat(TextFormat):
         self._chouon_map = chouon
 
     def __str__(self):
-        return (
-            "{}\n"
-            "---------------\n"
-            "{}\n"
-            .format(str(self._name), str(self._base_map))
-        )
+        return self._name
+
+    def pformat(self):
+        raise NotImplementedError
 
     def inputtable_lemmas(self):
+        """
+        Returns view of values in mapping from surface to internal rep.
+        """
         return self._base_map.inputtable_lemmas()
 
     def outputtable_lemmas(self):
+        """
+        Returns view of keys in mapping to format from internal rep.
+        """
         return self._base_map.outputtable_lemmas()
 
     def parse(self, string):
@@ -126,8 +137,21 @@ class MultiFormat(TextFormat):
     """
 
     def __init__(self, name, mappings):
+        """
+        name    -- the name of the format
+        mapping -- list of mappings to be applied
+        """
         self._name = name
         self._mappings = mappings
+
+    def pformat(self):
+        raise NotImplementedError
+
+    def inputtable_lemmas(self):
+        raise NotImplementedError
+
+    def outputtable_lemmas(self):
+        raise NotImplementedError
 
     def parse(self, string):
         """
@@ -139,4 +163,7 @@ class MultiFormat(TextFormat):
         return out
 
     def emit(self, string):
+        """
+        Return a string converted to this format.
+        """
         raise NotImplementedError("MultiFormat not suitable for output.")

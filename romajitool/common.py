@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+"""
+Functions and definitions intended for external use.
+"""
 
 from . import defs
-# from . import textformat
 
 IN_FORMATS = ["hiragana", "katakana", "nihon", "kunrei", "hepburn",
               "hepburn-strict", "hepburn-plus-kana"]
@@ -23,8 +24,8 @@ _name_to_fmt = {"hiragana": defs.HIRAGANA,
 
 def convert(in_str, in_fmt, out_fmt, in_opts=None, out_opts=None):
     """
-    Convert `in_str` from the specified input format to the specified output format
-    via an internal representation.
+    Convert `in_str` from the specified input format to the specified output
+    format via an internal representation.
     """
 
     if in_opts is None:
@@ -47,13 +48,6 @@ def convert(in_str, in_fmt, out_fmt, in_opts=None, out_opts=None):
     out_str = out_format.emit(intermediate).lower()
 
     return out_str
-
-
-# def to_wapuro(in_str):
-#     """
-#     Convert any format to wapuro romaji.
-#     """
-#     return convert(in_str, "hiragana", "wapuro")
 
 
 #

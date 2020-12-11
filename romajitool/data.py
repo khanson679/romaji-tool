@@ -3,7 +3,7 @@ Raw data sources for lemma lists and mappings.
 """
 
 # lemmas used in native Japanese words
-# Includes base moras, handakuon,and youon
+# includes base moras, dakuon, handakuon,and youon
 # dya/dyu/dyo are omitted due to lack of standard use
 LEMMA_TAB_BASE = """\
 A  I  U  E  O
@@ -328,6 +328,9 @@ uu U-,
 ee E-,
 oo O-
 """
+
+# character mapping tables turn out not to work for nasal spelling,
+#  because end of word/string needs to be referenced
 
 # NASAL_BASE = """\
 # n'a N'A,

@@ -1,4 +1,7 @@
-# import sys
+"""
+Provides command line interface implemented with Click.
+"""
+
 import click
 
 from .common import convert, IN_FORMATS, OUT_FORMATS

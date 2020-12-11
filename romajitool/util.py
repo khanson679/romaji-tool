@@ -1,3 +1,6 @@
+"""
+Miscellaneous utility functions.
+"""
 
 import re
 
