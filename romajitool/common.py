@@ -3,13 +3,17 @@
 from . import defs
 # from . import textformat
 
+IN_FORMATS = ["hiragana", "katakana", "nihon", "kunrei", "hepburn",
+              "hepburn-strict"]
+OUT_FORMATS = ["hiragana", "katakana", "nihon", "kunrei", "hepburn",
+               "hepburn-strict"]
 
-FORMATS = {"hiragana": defs.HIRAGANA,
-           "katakana": defs.KATAKANA,
-           "nihon": defs.NIHON,
-           "kunrei": defs.KUNREI,
-           "hepburn-strict": defs.HEPBURN_STRICT,
-           "hepburn": defs.HEPBURN}
+_name_to_fmt = {"hiragana": defs.HIRAGANA,
+                "katakana": defs.KATAKANA,
+                "nihon": defs.NIHON,
+                "kunrei": defs.KUNREI,
+                "hepburn": defs.HEPBURN,
+                "hepburn-strict": defs.HEPBURN_STRICT}
 
 
 #
@@ -28,16 +32,14 @@ def convert(in_str, in_fmt, out_fmt, in_opts=None, out_opts=None):
         out_opts = []
 
     # load formats
-    try:
-        in_format = FORMATS[in_fmt]
-    except KeyError:
+    if in_fmt not in IN_FORMATS:
         raise ValueError("in_fmt must be one of: {}."
-                         " Got '{}' instead.".format(FORMATS.keys(), in_fmt))
-    try:
-        out_format = FORMATS[out_fmt]
-    except KeyError:
+                         " Got '{}' instead.".format(IN_FORMATS, in_fmt))
+    if out_fmt not in OUT_FORMATS:
         raise ValueError("out_fmt must be one of: {}."
-                         " Got '{}' instead.".format(FORMATS.keys(), out_fmt))
+                         " Got '{}' instead.".format(OUT_FORMATS, out_fmt))
+    in_format = _name_to_fmt[in_fmt]
+    out_format = _name_to_fmt[out_fmt]
 
     # map to output format
     intermediate = in_format.parse(in_str)
@@ -67,6 +69,6 @@ def dump_tables():
           "Total: {}".format(len(defs.LEMMAS)),
           sep='\n', end="\n\n")
 
-    print(str(FORMATS["hiragana"]).encode('utf-8'))
+    print(str(_name_to_fmt["hiragana"]).encode('utf-8'))
 
-    print(str(FORMATS["wapuro"]).encode('utf-8'))
+    print(str(_name_to_fmt["wapuro"]).encode('utf-8'))

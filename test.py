@@ -19,7 +19,7 @@ class RTTestCase(unittest.TestCase):
         Check that for each format, all produced lemmas are in master list,
           lemmas in master list are converted to format.
         """
-        for fmt in FORMATS.values():
+        for fmt in defs.ALL_FORMATS:
             for lemma in fmt.outputtable_lemmas():
                 self.assertIn(
                     lemma,
