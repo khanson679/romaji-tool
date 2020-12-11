@@ -9,7 +9,7 @@ Definitions for mapping between kana/romaji and an internal representation.
 from . import util
 from . import data
 from .mapping import Mapping, ContextualMapping
-from .textformat import TextFormat, RomajiFormat
+from .textformat import TextFormat, RomajiFormat, MultiFormat
 
 
 #
@@ -104,5 +104,16 @@ HEPBURN = RomajiFormat(
     NASAL_MAP_DEFAULT,
     Mapping(SOKUON_MAP_BASE + SOKUON_MAP_HEPBURN + SOKUON_MAP_HEPBURN_EXTENDED),
     Mapping(CHOUON_MAP_MACRON))
+
+# special format for mixed kana + romaji input
+HEPBURN_PLUS_KANA = MultiFormat("Any", [
+    Mapping(HIRAGANA_MAP),
+    Mapping(KATAKANA_MAP),
+    Mapping(ROMAJI_MAP_HEPBURN + ROMAJI_MAP_HEPBURN_EXTENDED
+            + ROMAJI_MAP_HEPBURN_EXTRA,
+            out_map=ROMAJI_MAP_HEPBURN_OUTONLY + ROMAJI_MAP_HEPBURN_EXTRA_OUTONLY),
+    NASAL_MAP_DEFAULT,
+    Mapping(SOKUON_MAP_BASE + SOKUON_MAP_HEPBURN + SOKUON_MAP_HEPBURN_EXTENDED),
+    Mapping(CHOUON_MAP_MACRON)])
 
 ALL_FORMATS = [HIRAGANA, KATAKANA, NIHON, KUNREI, HEPBURN_STRICT, HEPBURN]

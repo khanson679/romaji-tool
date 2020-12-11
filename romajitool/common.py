@@ -4,7 +4,7 @@ from . import defs
 # from . import textformat
 
 IN_FORMATS = ["hiragana", "katakana", "nihon", "kunrei", "hepburn",
-              "hepburn-strict"]
+              "hepburn-strict", "hepburn-plus-kana"]
 OUT_FORMATS = ["hiragana", "katakana", "nihon", "kunrei", "hepburn",
                "hepburn-strict"]
 
@@ -13,7 +13,8 @@ _name_to_fmt = {"hiragana": defs.HIRAGANA,
                 "nihon": defs.NIHON,
                 "kunrei": defs.KUNREI,
                 "hepburn": defs.HEPBURN,
-                "hepburn-strict": defs.HEPBURN_STRICT}
+                "hepburn-strict": defs.HEPBURN_STRICT,
+                "hepburn-plus-kana": defs.HEPBURN_PLUS_KANA}
 
 
 #

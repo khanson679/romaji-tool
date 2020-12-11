@@ -115,3 +115,28 @@ class RomajiFormat(TextFormat):
                         self._chouon_map):
             out = mapping.emit(out)
         return out
+
+
+class MultiFormat(TextFormat):
+    """
+    Format that applies several mappings in sequence.
+
+    Used to parse text containing any combination of hiragana, katakata,
+    and a single romanization format. Not useful for output.
+    """
+
+    def __init__(self, name, mappings):
+        self._name = name
+        self._mappings = mappings
+
+    def parse(self, string):
+        """
+        Return a string converted to the internal representation.
+        """
+        out = string
+        for mapping in self._mappings:
+            out = mapping.parse(out)
+        return out
+
+    def emit(self, string):
+        raise NotImplementedError("MultiFormat not suitable for output.")

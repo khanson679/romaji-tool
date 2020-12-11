@@ -5,7 +5,7 @@ from .common import convert, IN_FORMATS, OUT_FORMATS
 
 
 @click.command()
-@click.option('--from', '-f', 'in_fmt', default="hiragana",
+@click.option('--from', '-f', 'in_fmt', default="hepburn-plus-kana",
               type=click.Choice([k for k in IN_FORMATS], case_sensitive=False))
 @click.option('--to', '-t', 'out_fmt', required=True,
               type=click.Choice([k for k in OUT_FORMATS], case_sensitive=False))
